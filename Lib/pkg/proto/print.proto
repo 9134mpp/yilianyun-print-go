@@ -5,10 +5,15 @@ package proto;
 import "proto/common.proto";
 
 service PrintService{
-  rpc Print(GetPrintRequest)returns(GetPrintReply);
+  rpc Print(PrintRequest)returns(PrintReply);
+  rpc GetOpenToken(OpenOauthRequest)returns(PrintReply);
+  rpc GetToken(OauthRequest)returns(PrintReply);
+  rpc PicturePrint(PicturePrintRequest)returns(PrintReply);
+  rpc ExpressPrint(ExpressPrintRequest)returns(PrintReply);
+  rpc PrintSetVoice(PrintSetVoiceRequest)returns(PrintReply);
 }
 
-message GetPrintRequest{
+message PrintRequest{
   string client_id = 1;
   string access_token = 2;
   string machine_code = 3;
@@ -19,8 +24,62 @@ message GetPrintRequest{
   int64 timestamp = 8;
 }
 
-message GetPrintReply{
+message PrintReply{
   string error = 1;
   string error_description = 2;
   Body body = 3;
+}
+
+message OauthRequest{
+  string client_id = 1;
+  string grant_type = 2;
+  string sign = 3;
+  string scope = 4;
+  int64 timestamp = 5;
+  string id = 6;
+}
+
+message OpenOauthRequest{
+  string client_id = 1;
+  string machine_code = 2;
+  string msign = 3;
+  string scope = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PicturePrintRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string picture_url = 4;
+  string origin_id = 5;
+  string sign = 6;
+  string id = 7;
+  int64 timestamp = 8;
+}
+
+message ExpressPrintRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string origin_id = 4;
+  string id = 5;
+  string sign = 6;
+  string timestamp = 7;
+  string content = 8;
+}
+
+message PrintSetVoiceRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string content = 4;
+  string is_file = 5;
+  string aid = 6;
+  string sign = 7;
+  string id = 8;
+  int64 timestamp = 9;
+
 }

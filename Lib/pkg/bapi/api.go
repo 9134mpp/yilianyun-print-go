@@ -35,7 +35,7 @@ func NewAPI(url string) *API {
 	return &API{URL: url}
 }
 
-func(a *API)GetAccessToken()([]byte, error){
+func(a *API)GetToken(ctx context.Context, r *pd.OauthRequest)([]byte, error){
 	data := make(url.Values)
 	timestamp := strconv.FormatInt(time.Now().Unix(),10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
@@ -43,7 +43,7 @@ func(a *API)GetAccessToken()([]byte, error){
 	data["scope"] = []string{"all"}
 	data["timestamp"] = []string{timestamp}
 	data["id"] = []string{common.GetUUID4()}
-
+	data["grant_type"] = []string{"client_credentials"}
 	body, err := a.httpPost("oauth/oauth", data)
 	if err != nil {
 		return nil , err
@@ -52,7 +52,7 @@ func(a *API)GetAccessToken()([]byte, error){
 }
 
 // 文本打印接口
-func (a *API) Print(ctx context.Context, r *pd.GetPrintRequest)([]byte, error){
+func (a *API) Print(ctx context.Context, r *pd.PrintRequest)([]byte, error){
 	data := make(url.Values)
 	timestamp := strconv.FormatInt(time.Now().Unix(),10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
@@ -60,7 +60,7 @@ func (a *API) Print(ctx context.Context, r *pd.GetPrintRequest)([]byte, error){
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["content"] = []string{r.Content}
-	data["origin_id"] = []string{r.OriginId}
+	data["origin_id"] = []string{common.GetOrderId()}
 	data["timestamp"] = []string{timestamp}
 	data["id"] = []string{common.GetUUID4()}
 	body, err := a.httpPost("print/index",data)

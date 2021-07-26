@@ -24,7 +24,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type GetPrintRequest struct {
+type PrintRequest struct {
 	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
 	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
 	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
@@ -38,88 +38,88 @@ type GetPrintRequest struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GetPrintRequest) Reset()         { *m = GetPrintRequest{} }
-func (m *GetPrintRequest) String() string { return proto.CompactTextString(m) }
-func (*GetPrintRequest) ProtoMessage()    {}
-func (*GetPrintRequest) Descriptor() ([]byte, []int) {
+func (m *PrintRequest) Reset()         { *m = PrintRequest{} }
+func (m *PrintRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintRequest) ProtoMessage()    {}
+func (*PrintRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_e13c50d52a05c362, []int{0}
 }
 
-func (m *GetPrintRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetPrintRequest.Unmarshal(m, b)
+func (m *PrintRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintRequest.Unmarshal(m, b)
 }
-func (m *GetPrintRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetPrintRequest.Marshal(b, m, deterministic)
+func (m *PrintRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintRequest.Marshal(b, m, deterministic)
 }
-func (m *GetPrintRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetPrintRequest.Merge(m, src)
+func (m *PrintRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintRequest.Merge(m, src)
 }
-func (m *GetPrintRequest) XXX_Size() int {
-	return xxx_messageInfo_GetPrintRequest.Size(m)
+func (m *PrintRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintRequest.Size(m)
 }
-func (m *GetPrintRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetPrintRequest.DiscardUnknown(m)
+func (m *PrintRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetPrintRequest proto.InternalMessageInfo
+var xxx_messageInfo_PrintRequest proto.InternalMessageInfo
 
-func (m *GetPrintRequest) GetClientId() string {
+func (m *PrintRequest) GetClientId() string {
 	if m != nil {
 		return m.ClientId
 	}
 	return ""
 }
 
-func (m *GetPrintRequest) GetAccessToken() string {
+func (m *PrintRequest) GetAccessToken() string {
 	if m != nil {
 		return m.AccessToken
 	}
 	return ""
 }
 
-func (m *GetPrintRequest) GetMachineCode() string {
+func (m *PrintRequest) GetMachineCode() string {
 	if m != nil {
 		return m.MachineCode
 	}
 	return ""
 }
 
-func (m *GetPrintRequest) GetContent() string {
+func (m *PrintRequest) GetContent() string {
 	if m != nil {
 		return m.Content
 	}
 	return ""
 }
 
-func (m *GetPrintRequest) GetOriginId() string {
+func (m *PrintRequest) GetOriginId() string {
 	if m != nil {
 		return m.OriginId
 	}
 	return ""
 }
 
-func (m *GetPrintRequest) GetSign() string {
+func (m *PrintRequest) GetSign() string {
 	if m != nil {
 		return m.Sign
 	}
 	return ""
 }
 
-func (m *GetPrintRequest) GetId() string {
+func (m *PrintRequest) GetId() string {
 	if m != nil {
 		return m.Id
 	}
 	return ""
 }
 
-func (m *GetPrintRequest) GetTimestamp() int64 {
+func (m *PrintRequest) GetTimestamp() int64 {
 	if m != nil {
 		return m.Timestamp
 	}
 	return 0
 }
 
-type GetPrintReply struct {
+type PrintReply struct {
 	Error                string   `protobuf:"bytes,1,opt,name=error,proto3" json:"error,omitempty"`
 	ErrorDescription     string   `protobuf:"bytes,2,opt,name=error_description,json=errorDescription,proto3" json:"error_description,omitempty"`
 	Body                 *Body    `protobuf:"bytes,3,opt,name=body,proto3" json:"body,omitempty"`
@@ -128,81 +128,563 @@ type GetPrintReply struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GetPrintReply) Reset()         { *m = GetPrintReply{} }
-func (m *GetPrintReply) String() string { return proto.CompactTextString(m) }
-func (*GetPrintReply) ProtoMessage()    {}
-func (*GetPrintReply) Descriptor() ([]byte, []int) {
+func (m *PrintReply) Reset()         { *m = PrintReply{} }
+func (m *PrintReply) String() string { return proto.CompactTextString(m) }
+func (*PrintReply) ProtoMessage()    {}
+func (*PrintReply) Descriptor() ([]byte, []int) {
 	return fileDescriptor_e13c50d52a05c362, []int{1}
 }
 
-func (m *GetPrintReply) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetPrintReply.Unmarshal(m, b)
+func (m *PrintReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintReply.Unmarshal(m, b)
 }
-func (m *GetPrintReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetPrintReply.Marshal(b, m, deterministic)
+func (m *PrintReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintReply.Marshal(b, m, deterministic)
 }
-func (m *GetPrintReply) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetPrintReply.Merge(m, src)
+func (m *PrintReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintReply.Merge(m, src)
 }
-func (m *GetPrintReply) XXX_Size() int {
-	return xxx_messageInfo_GetPrintReply.Size(m)
+func (m *PrintReply) XXX_Size() int {
+	return xxx_messageInfo_PrintReply.Size(m)
 }
-func (m *GetPrintReply) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetPrintReply.DiscardUnknown(m)
+func (m *PrintReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintReply.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GetPrintReply proto.InternalMessageInfo
+var xxx_messageInfo_PrintReply proto.InternalMessageInfo
 
-func (m *GetPrintReply) GetError() string {
+func (m *PrintReply) GetError() string {
 	if m != nil {
 		return m.Error
 	}
 	return ""
 }
 
-func (m *GetPrintReply) GetErrorDescription() string {
+func (m *PrintReply) GetErrorDescription() string {
 	if m != nil {
 		return m.ErrorDescription
 	}
 	return ""
 }
 
-func (m *GetPrintReply) GetBody() *Body {
+func (m *PrintReply) GetBody() *Body {
 	if m != nil {
 		return m.Body
 	}
 	return nil
 }
 
+type OauthRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	GrantType            string   `protobuf:"bytes,2,opt,name=grant_type,json=grantType,proto3" json:"grant_type,omitempty"`
+	Sign                 string   `protobuf:"bytes,3,opt,name=sign,proto3" json:"sign,omitempty"`
+	Scope                string   `protobuf:"bytes,4,opt,name=scope,proto3" json:"scope,omitempty"`
+	Timestamp            int64    `protobuf:"varint,5,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *OauthRequest) Reset()         { *m = OauthRequest{} }
+func (m *OauthRequest) String() string { return proto.CompactTextString(m) }
+func (*OauthRequest) ProtoMessage()    {}
+func (*OauthRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{2}
+}
+
+func (m *OauthRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_OauthRequest.Unmarshal(m, b)
+}
+func (m *OauthRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_OauthRequest.Marshal(b, m, deterministic)
+}
+func (m *OauthRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_OauthRequest.Merge(m, src)
+}
+func (m *OauthRequest) XXX_Size() int {
+	return xxx_messageInfo_OauthRequest.Size(m)
+}
+func (m *OauthRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_OauthRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_OauthRequest proto.InternalMessageInfo
+
+func (m *OauthRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *OauthRequest) GetGrantType() string {
+	if m != nil {
+		return m.GrantType
+	}
+	return ""
+}
+
+func (m *OauthRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *OauthRequest) GetScope() string {
+	if m != nil {
+		return m.Scope
+	}
+	return ""
+}
+
+func (m *OauthRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+func (m *OauthRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type OpenOauthRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	MachineCode          string   `protobuf:"bytes,2,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Msign                string   `protobuf:"bytes,3,opt,name=msign,proto3" json:"msign,omitempty"`
+	Scope                string   `protobuf:"bytes,4,opt,name=scope,proto3" json:"scope,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *OpenOauthRequest) Reset()         { *m = OpenOauthRequest{} }
+func (m *OpenOauthRequest) String() string { return proto.CompactTextString(m) }
+func (*OpenOauthRequest) ProtoMessage()    {}
+func (*OpenOauthRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{3}
+}
+
+func (m *OpenOauthRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_OpenOauthRequest.Unmarshal(m, b)
+}
+func (m *OpenOauthRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_OpenOauthRequest.Marshal(b, m, deterministic)
+}
+func (m *OpenOauthRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_OpenOauthRequest.Merge(m, src)
+}
+func (m *OpenOauthRequest) XXX_Size() int {
+	return xxx_messageInfo_OpenOauthRequest.Size(m)
+}
+func (m *OpenOauthRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_OpenOauthRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_OpenOauthRequest proto.InternalMessageInfo
+
+func (m *OpenOauthRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *OpenOauthRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *OpenOauthRequest) GetMsign() string {
+	if m != nil {
+		return m.Msign
+	}
+	return ""
+}
+
+func (m *OpenOauthRequest) GetScope() string {
+	if m != nil {
+		return m.Scope
+	}
+	return ""
+}
+
+func (m *OpenOauthRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *OpenOauthRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *OpenOauthRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PicturePrintRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	PictureUrl           string   `protobuf:"bytes,4,opt,name=picture_url,json=pictureUrl,proto3" json:"picture_url,omitempty"`
+	OriginId             string   `protobuf:"bytes,5,opt,name=origin_id,json=originId,proto3" json:"origin_id,omitempty"`
+	Sign                 string   `protobuf:"bytes,6,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,7,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,8,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PicturePrintRequest) Reset()         { *m = PicturePrintRequest{} }
+func (m *PicturePrintRequest) String() string { return proto.CompactTextString(m) }
+func (*PicturePrintRequest) ProtoMessage()    {}
+func (*PicturePrintRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{4}
+}
+
+func (m *PicturePrintRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PicturePrintRequest.Unmarshal(m, b)
+}
+func (m *PicturePrintRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PicturePrintRequest.Marshal(b, m, deterministic)
+}
+func (m *PicturePrintRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PicturePrintRequest.Merge(m, src)
+}
+func (m *PicturePrintRequest) XXX_Size() int {
+	return xxx_messageInfo_PicturePrintRequest.Size(m)
+}
+func (m *PicturePrintRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PicturePrintRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PicturePrintRequest proto.InternalMessageInfo
+
+func (m *PicturePrintRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PicturePrintRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PicturePrintRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PicturePrintRequest) GetPictureUrl() string {
+	if m != nil {
+		return m.PictureUrl
+	}
+	return ""
+}
+
+func (m *PicturePrintRequest) GetOriginId() string {
+	if m != nil {
+		return m.OriginId
+	}
+	return ""
+}
+
+func (m *PicturePrintRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PicturePrintRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PicturePrintRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type ExpressPrintRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	OriginId             string   `protobuf:"bytes,4,opt,name=origin_id,json=originId,proto3" json:"origin_id,omitempty"`
+	Id                   string   `protobuf:"bytes,5,opt,name=id,proto3" json:"id,omitempty"`
+	Sign                 string   `protobuf:"bytes,6,opt,name=sign,proto3" json:"sign,omitempty"`
+	Timestamp            string   `protobuf:"bytes,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	Content              string   `protobuf:"bytes,8,opt,name=content,proto3" json:"content,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExpressPrintRequest) Reset()         { *m = ExpressPrintRequest{} }
+func (m *ExpressPrintRequest) String() string { return proto.CompactTextString(m) }
+func (*ExpressPrintRequest) ProtoMessage()    {}
+func (*ExpressPrintRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{5}
+}
+
+func (m *ExpressPrintRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExpressPrintRequest.Unmarshal(m, b)
+}
+func (m *ExpressPrintRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExpressPrintRequest.Marshal(b, m, deterministic)
+}
+func (m *ExpressPrintRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExpressPrintRequest.Merge(m, src)
+}
+func (m *ExpressPrintRequest) XXX_Size() int {
+	return xxx_messageInfo_ExpressPrintRequest.Size(m)
+}
+func (m *ExpressPrintRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExpressPrintRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExpressPrintRequest proto.InternalMessageInfo
+
+func (m *ExpressPrintRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *ExpressPrintRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *ExpressPrintRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *ExpressPrintRequest) GetOriginId() string {
+	if m != nil {
+		return m.OriginId
+	}
+	return ""
+}
+
+func (m *ExpressPrintRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *ExpressPrintRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *ExpressPrintRequest) GetTimestamp() string {
+	if m != nil {
+		return m.Timestamp
+	}
+	return ""
+}
+
+func (m *ExpressPrintRequest) GetContent() string {
+	if m != nil {
+		return m.Content
+	}
+	return ""
+}
+
+type PrintSetVoiceRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Content              string   `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty"`
+	IsFile               string   `protobuf:"bytes,5,opt,name=is_file,json=isFile,proto3" json:"is_file,omitempty"`
+	Aid                  string   `protobuf:"bytes,6,opt,name=aid,proto3" json:"aid,omitempty"`
+	Sign                 string   `protobuf:"bytes,7,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,8,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,9,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintSetVoiceRequest) Reset()         { *m = PrintSetVoiceRequest{} }
+func (m *PrintSetVoiceRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintSetVoiceRequest) ProtoMessage()    {}
+func (*PrintSetVoiceRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{6}
+}
+
+func (m *PrintSetVoiceRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintSetVoiceRequest.Unmarshal(m, b)
+}
+func (m *PrintSetVoiceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintSetVoiceRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintSetVoiceRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintSetVoiceRequest.Merge(m, src)
+}
+func (m *PrintSetVoiceRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintSetVoiceRequest.Size(m)
+}
+func (m *PrintSetVoiceRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintSetVoiceRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintSetVoiceRequest proto.InternalMessageInfo
+
+func (m *PrintSetVoiceRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintSetVoiceRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintSetVoiceRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintSetVoiceRequest) GetContent() string {
+	if m != nil {
+		return m.Content
+	}
+	return ""
+}
+
+func (m *PrintSetVoiceRequest) GetIsFile() string {
+	if m != nil {
+		return m.IsFile
+	}
+	return ""
+}
+
+func (m *PrintSetVoiceRequest) GetAid() string {
+	if m != nil {
+		return m.Aid
+	}
+	return ""
+}
+
+func (m *PrintSetVoiceRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintSetVoiceRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintSetVoiceRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
 func init() {
-	proto.RegisterType((*GetPrintRequest)(nil), "proto.GetPrintRequest")
-	proto.RegisterType((*GetPrintReply)(nil), "proto.GetPrintReply")
+	proto.RegisterType((*PrintRequest)(nil), "proto.PrintRequest")
+	proto.RegisterType((*PrintReply)(nil), "proto.PrintReply")
+	proto.RegisterType((*OauthRequest)(nil), "proto.OauthRequest")
+	proto.RegisterType((*OpenOauthRequest)(nil), "proto.OpenOauthRequest")
+	proto.RegisterType((*PicturePrintRequest)(nil), "proto.PicturePrintRequest")
+	proto.RegisterType((*ExpressPrintRequest)(nil), "proto.ExpressPrintRequest")
+	proto.RegisterType((*PrintSetVoiceRequest)(nil), "proto.PrintSetVoiceRequest")
 }
 
 func init() { proto.RegisterFile("proto/print.proto", fileDescriptor_e13c50d52a05c362) }
 
 var fileDescriptor_e13c50d52a05c362 = []byte{
-	// 308 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x64, 0x91, 0xdd, 0x4a, 0x03, 0x31,
-	0x10, 0x85, 0xd9, 0xb6, 0xdb, 0x9f, 0x69, 0xfd, 0xe9, 0x50, 0x24, 0x54, 0xc1, 0xda, 0xab, 0x82,
-	0x50, 0xa1, 0xe2, 0x0b, 0xf8, 0x83, 0xf4, 0x4e, 0x56, 0xef, 0x97, 0x36, 0x19, 0x6a, 0xb0, 0x9b,
-	0xac, 0x49, 0x14, 0xf6, 0xa1, 0x7d, 0x07, 0xd9, 0x49, 0x4b, 0x41, 0xaf, 0x76, 0xce, 0x77, 0x0e,
-	0x1c, 0xce, 0x06, 0x86, 0xa5, 0xb3, 0xc1, 0xde, 0x94, 0x4e, 0x9b, 0x30, 0xe7, 0x1b, 0x53, 0xfe,
-	0x8c, 0x31, 0x3a, 0xd2, 0x16, 0x85, 0x35, 0xd1, 0x9a, 0xfe, 0x24, 0x70, 0xf2, 0x4c, 0xe1, 0xa5,
-	0x4e, 0x67, 0xf4, 0xf9, 0x45, 0x3e, 0xe0, 0x39, 0xf4, 0xe4, 0x56, 0x93, 0x09, 0xb9, 0x56, 0x22,
-	0x99, 0x24, 0xb3, 0x5e, 0xd6, 0x8d, 0x60, 0xa9, 0xf0, 0x0a, 0x06, 0x2b, 0x29, 0xc9, 0xfb, 0x3c,
-	0xd8, 0x0f, 0x32, 0xa2, 0xc1, 0x7e, 0x3f, 0xb2, 0xb7, 0x1a, 0xd5, 0x91, 0x62, 0x25, 0xdf, 0xb5,
-	0xa1, 0x5c, 0x5a, 0x45, 0xa2, 0x19, 0x23, 0x3b, 0xf6, 0x60, 0x15, 0xa1, 0x80, 0x8e, 0xb4, 0x26,
-	0x90, 0x09, 0xa2, 0xc5, 0xee, 0x5e, 0xd6, 0xe5, 0xd6, 0xe9, 0x8d, 0x36, 0x75, 0x79, 0x1a, 0xcb,
-	0x23, 0x58, 0x2a, 0x44, 0x68, 0x79, 0xbd, 0x31, 0xa2, 0xcd, 0x9c, 0x6f, 0x3c, 0x86, 0x86, 0x56,
-	0xa2, 0xc3, 0xa4, 0xa1, 0x15, 0x5e, 0x40, 0x2f, 0xe8, 0x82, 0x7c, 0x58, 0x15, 0xa5, 0xe8, 0x4e,
-	0x92, 0x59, 0x33, 0x3b, 0x80, 0xa9, 0x87, 0xa3, 0xc3, 0xdc, 0x72, 0x5b, 0xe1, 0x08, 0x52, 0x72,
-	0xce, 0xba, 0xdd, 0xd0, 0x28, 0xf0, 0x1a, 0x86, 0x7c, 0xe4, 0x8a, 0xbc, 0x74, 0xba, 0x0c, 0xda,
-	0xee, 0xa7, 0x9e, 0xb2, 0xf1, 0x78, 0xe0, 0x78, 0x09, 0xad, 0xb5, 0x55, 0x15, 0xef, 0xec, 0x2f,
-	0xfa, 0xf1, 0xcf, 0xce, 0xef, 0xad, 0xaa, 0x32, 0x36, 0x16, 0x4f, 0x30, 0xe0, 0xc6, 0x57, 0x72,
-	0xdf, 0x5a, 0x12, 0xde, 0x41, 0xca, 0x1a, 0xcf, 0x76, 0xd9, 0x3f, 0x2f, 0x30, 0x1e, 0xfd, 0xe3,
-	0xe5, 0xb6, 0x5a, 0xb7, 0x19, 0xde, 0xfe, 0x06, 0x00, 0x00, 0xff, 0xff, 0x2b, 0x3a, 0x33, 0x7d,
-	0xe2, 0x01, 0x00, 0x00,
+	// 596 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x54, 0xcf, 0x6e, 0xd3, 0x4e,
+	0x10, 0x96, 0x9d, 0x38, 0x89, 0x27, 0xf9, 0xfd, 0xd4, 0x6c, 0x22, 0xd5, 0x4a, 0x41, 0x2d, 0x39,
+	0x55, 0x42, 0x6a, 0xa5, 0x70, 0x43, 0x42, 0x48, 0xfc, 0xab, 0x7a, 0x6a, 0x95, 0x16, 0xae, 0x96,
+	0xbb, 0x1e, 0xd2, 0x15, 0xb6, 0x77, 0x59, 0x6f, 0x10, 0xb9, 0xf1, 0x2c, 0x3c, 0x09, 0xcf, 0xc3,
+	0x01, 0x89, 0x1b, 0x47, 0xe4, 0xdd, 0x75, 0xea, 0x38, 0xae, 0xe8, 0x85, 0x8a, 0x93, 0x77, 0xbe,
+	0x99, 0xf1, 0xec, 0xf7, 0xcd, 0xec, 0xc0, 0x50, 0x48, 0xae, 0xf8, 0xb1, 0x90, 0x2c, 0x53, 0x47,
+	0xfa, 0x4c, 0x3c, 0xfd, 0x99, 0x10, 0xe3, 0xa1, 0x3c, 0x4d, 0x79, 0x66, 0x5c, 0xd3, 0xef, 0x0e,
+	0x0c, 0xce, 0x8b, 0xd0, 0x39, 0x7e, 0x5c, 0x62, 0xae, 0xc8, 0x1e, 0xf8, 0x34, 0x61, 0x98, 0xa9,
+	0x90, 0xc5, 0x81, 0x73, 0xe0, 0x1c, 0xfa, 0xf3, 0x9e, 0x01, 0x4e, 0x63, 0xf2, 0x08, 0x06, 0x11,
+	0xa5, 0x98, 0xe7, 0xa1, 0xe2, 0x1f, 0x30, 0x0b, 0x5c, 0xed, 0xef, 0x1b, 0xec, 0xb2, 0x80, 0x8a,
+	0x90, 0x34, 0xa2, 0xd7, 0x2c, 0xc3, 0x90, 0xf2, 0x18, 0x83, 0x96, 0x09, 0xb1, 0xd8, 0x4b, 0x1e,
+	0x23, 0x09, 0xa0, 0x4b, 0x79, 0xa6, 0x30, 0x53, 0x41, 0x5b, 0x7b, 0x4b, 0xb3, 0x28, 0xce, 0x25,
+	0x5b, 0xb0, 0xac, 0x28, 0xee, 0x99, 0xe2, 0x06, 0x38, 0x8d, 0x09, 0x81, 0x76, 0xce, 0x16, 0x59,
+	0xd0, 0xd1, 0xb8, 0x3e, 0x93, 0xff, 0xc1, 0x65, 0x71, 0xd0, 0xd5, 0x88, 0xcb, 0x62, 0xf2, 0x00,
+	0x7c, 0xc5, 0x52, 0xcc, 0x55, 0x94, 0x8a, 0xa0, 0x77, 0xe0, 0x1c, 0xb6, 0xe6, 0x37, 0xc0, 0x54,
+	0x00, 0x58, 0xae, 0x22, 0x59, 0x91, 0x31, 0x78, 0x28, 0x25, 0x97, 0x96, 0xa5, 0x31, 0xc8, 0x63,
+	0x18, 0xea, 0x43, 0x18, 0x63, 0x4e, 0x25, 0x13, 0x8a, 0xf1, 0x92, 0xe7, 0x8e, 0x76, 0xbc, 0xba,
+	0xc1, 0xc9, 0x3e, 0xb4, 0xaf, 0x78, 0xbc, 0xd2, 0x24, 0xfb, 0xb3, 0xbe, 0xd1, 0xf4, 0xe8, 0x05,
+	0x8f, 0x57, 0x73, 0xed, 0x98, 0x7e, 0x75, 0x60, 0x70, 0x16, 0x2d, 0xd5, 0xf5, 0x9d, 0xe4, 0x7d,
+	0x08, 0xb0, 0x90, 0x51, 0xa6, 0x42, 0xb5, 0x12, 0x68, 0x8b, 0xfa, 0x1a, 0xb9, 0x5c, 0x09, 0x5c,
+	0x0b, 0xd0, 0xaa, 0x08, 0x30, 0x06, 0x2f, 0xa7, 0x5c, 0xa0, 0x55, 0xd2, 0x18, 0x9b, 0x32, 0x78,
+	0x35, 0x19, 0xac, 0x68, 0x9d, 0x52, 0xb4, 0xe9, 0x37, 0x07, 0x76, 0xce, 0x04, 0x66, 0x77, 0xbf,
+	0x68, 0xbd, 0xc9, 0xee, 0x76, 0x93, 0xc7, 0xe0, 0xa5, 0x95, 0xdb, 0x1a, 0xe3, 0x96, 0xeb, 0x96,
+	0xc4, 0xbc, 0xad, 0xce, 0x76, 0x9a, 0x3b, 0xdb, 0xad, 0x77, 0xf6, 0x97, 0x03, 0xa3, 0x73, 0x46,
+	0xd5, 0x52, 0xe2, 0x7d, 0x4f, 0xf3, 0x3e, 0xf4, 0x85, 0xa9, 0x1c, 0x2e, 0x65, 0x62, 0x89, 0x81,
+	0x85, 0xde, 0xca, 0xe4, 0x6f, 0x0f, 0xf5, 0x4f, 0x07, 0x46, 0xaf, 0x3f, 0x0b, 0x89, 0x79, 0x7e,
+	0xdf, 0xd4, 0x37, 0x98, 0xb5, 0x6b, 0xcc, 0x0c, 0x0b, 0x6f, 0xcd, 0xa2, 0x89, 0xe9, 0x56, 0x53,
+	0xfd, 0xea, 0x9c, 0x56, 0xf6, 0x44, 0x6f, 0x63, 0x4f, 0x4c, 0xbf, 0xb8, 0x30, 0xd6, 0x64, 0x2f,
+	0x50, 0xbd, 0xe3, 0x8c, 0xe2, 0x3f, 0xb1, 0xbd, 0x76, 0xa1, 0xcb, 0xf2, 0xf0, 0x3d, 0x4b, 0xd0,
+	0xd2, 0xee, 0xb0, 0xfc, 0x0d, 0x4b, 0x90, 0xec, 0x40, 0x2b, 0x5a, 0x0f, 0x73, 0x71, 0x5c, 0x8b,
+	0xd1, 0xdd, 0x6a, 0x7b, 0xaf, 0xb9, 0xed, 0x7e, 0xad, 0xed, 0xb3, 0x1f, 0xae, 0x5d, 0xdc, 0x17,
+	0x28, 0x3f, 0x31, 0x8a, 0xe4, 0x18, 0x3c, 0x6d, 0x93, 0x91, 0x5d, 0x43, 0xd5, 0x69, 0x98, 0x0c,
+	0x37, 0xc1, 0x62, 0xff, 0x3d, 0x85, 0xc1, 0x09, 0xaa, 0xe2, 0xe1, 0x1b, 0xee, 0xbb, 0x36, 0xa4,
+	0xbe, 0x0a, 0x9a, 0x72, 0x67, 0xd0, 0x3b, 0x41, 0x65, 0xf2, 0xca, 0x7a, 0x7f, 0xca, 0x79, 0x06,
+	0x83, 0xea, 0x13, 0x25, 0x93, 0x32, 0x64, 0xfb, 0xdd, 0xde, 0x92, 0x5e, 0x1d, 0xf3, 0x75, 0x7a,
+	0xc3, 0xec, 0x37, 0xa5, 0x3f, 0x87, 0xff, 0x36, 0x26, 0x86, 0xec, 0x55, 0x63, 0x6a, 0x73, 0xd4,
+	0xf0, 0x83, 0xab, 0x8e, 0x46, 0x9e, 0xfc, 0x0e, 0x00, 0x00, 0xff, 0xff, 0x42, 0x3f, 0xeb, 0x8a,
+	0x60, 0x07, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -217,7 +699,12 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type PrintServiceClient interface {
-	Print(ctx context.Context, in *GetPrintRequest, opts ...grpc.CallOption) (*GetPrintReply, error)
+	Print(ctx context.Context, in *PrintRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	GetOpenToken(ctx context.Context, in *OpenOauthRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	GetToken(ctx context.Context, in *OauthRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PicturePrint(ctx context.Context, in *PicturePrintRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	ExpressPrint(ctx context.Context, in *ExpressPrintRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintSetVoice(ctx context.Context, in *PrintSetVoiceRequest, opts ...grpc.CallOption) (*PrintReply, error)
 }
 
 type printServiceClient struct {
@@ -228,9 +715,54 @@ func NewPrintServiceClient(cc *grpc.ClientConn) PrintServiceClient {
 	return &printServiceClient{cc}
 }
 
-func (c *printServiceClient) Print(ctx context.Context, in *GetPrintRequest, opts ...grpc.CallOption) (*GetPrintReply, error) {
-	out := new(GetPrintReply)
+func (c *printServiceClient) Print(ctx context.Context, in *PrintRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
 	err := c.cc.Invoke(ctx, "/proto.PrintService/Print", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) GetOpenToken(ctx context.Context, in *OpenOauthRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/GetOpenToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) GetToken(ctx context.Context, in *OauthRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/GetToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PicturePrint(ctx context.Context, in *PicturePrintRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PicturePrint", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) ExpressPrint(ctx context.Context, in *ExpressPrintRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/ExpressPrint", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintSetVoice(ctx context.Context, in *PrintSetVoiceRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintSetVoice", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -239,15 +771,35 @@ func (c *printServiceClient) Print(ctx context.Context, in *GetPrintRequest, opt
 
 // PrintServiceServer is the server API for PrintService service.
 type PrintServiceServer interface {
-	Print(context.Context, *GetPrintRequest) (*GetPrintReply, error)
+	Print(context.Context, *PrintRequest) (*PrintReply, error)
+	GetOpenToken(context.Context, *OpenOauthRequest) (*PrintReply, error)
+	GetToken(context.Context, *OauthRequest) (*PrintReply, error)
+	PicturePrint(context.Context, *PicturePrintRequest) (*PrintReply, error)
+	ExpressPrint(context.Context, *ExpressPrintRequest) (*PrintReply, error)
+	PrintSetVoice(context.Context, *PrintSetVoiceRequest) (*PrintReply, error)
 }
 
 // UnimplementedPrintServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedPrintServiceServer struct {
 }
 
-func (*UnimplementedPrintServiceServer) Print(ctx context.Context, req *GetPrintRequest) (*GetPrintReply, error) {
+func (*UnimplementedPrintServiceServer) Print(ctx context.Context, req *PrintRequest) (*PrintReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Print not implemented")
+}
+func (*UnimplementedPrintServiceServer) GetOpenToken(ctx context.Context, req *OpenOauthRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOpenToken not implemented")
+}
+func (*UnimplementedPrintServiceServer) GetToken(ctx context.Context, req *OauthRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetToken not implemented")
+}
+func (*UnimplementedPrintServiceServer) PicturePrint(ctx context.Context, req *PicturePrintRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PicturePrint not implemented")
+}
+func (*UnimplementedPrintServiceServer) ExpressPrint(ctx context.Context, req *ExpressPrintRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ExpressPrint not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintSetVoice(ctx context.Context, req *PrintSetVoiceRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintSetVoice not implemented")
 }
 
 func RegisterPrintServiceServer(s *grpc.Server, srv PrintServiceServer) {
@@ -255,7 +807,7 @@ func RegisterPrintServiceServer(s *grpc.Server, srv PrintServiceServer) {
 }
 
 func _PrintService_Print_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPrintRequest)
+	in := new(PrintRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -267,7 +819,97 @@ func _PrintService_Print_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: "/proto.PrintService/Print",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PrintServiceServer).Print(ctx, req.(*GetPrintRequest))
+		return srv.(PrintServiceServer).Print(ctx, req.(*PrintRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_GetOpenToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OpenOauthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).GetOpenToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/GetOpenToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).GetOpenToken(ctx, req.(*OpenOauthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_GetToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OauthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).GetToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/GetToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).GetToken(ctx, req.(*OauthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PicturePrint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PicturePrintRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PicturePrint(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PicturePrint",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PicturePrint(ctx, req.(*PicturePrintRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_ExpressPrint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExpressPrintRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).ExpressPrint(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/ExpressPrint",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).ExpressPrint(ctx, req.(*ExpressPrintRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintSetVoice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintSetVoiceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintSetVoice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintSetVoice",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintSetVoice(ctx, req.(*PrintSetVoiceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -279,6 +921,26 @@ var _PrintService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Print",
 			Handler:    _PrintService_Print_Handler,
+		},
+		{
+			MethodName: "GetOpenToken",
+			Handler:    _PrintService_GetOpenToken_Handler,
+		},
+		{
+			MethodName: "GetToken",
+			Handler:    _PrintService_GetToken_Handler,
+		},
+		{
+			MethodName: "PicturePrint",
+			Handler:    _PrintService_PicturePrint_Handler,
+		},
+		{
+			MethodName: "ExpressPrint",
+			Handler:    _PrintService_ExpressPrint_Handler,
+		},
+		{
+			MethodName: "PrintSetVoice",
+			Handler:    _PrintService_PrintSetVoice_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -15,6 +15,7 @@ var ClientSetting = &Client{}
 type Client struct {
 	ClientId string
 	ClientServer string
+	AccessToken string
 }
 
 
@@ -28,4 +29,9 @@ func Setup(){
 	if err!= nil  {
 		log.Fatalf("Cfg.MapTo ClientSetting err: %v", err)
 	}
+}
+
+func Update(section, key, value string){
+	Cfg.Section(section).Key(key).SetValue(value)
+	_ = Cfg.SaveTo("Config/app.ini")
 }

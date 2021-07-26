@@ -12,6 +12,9 @@ message ErrorDescription{
 message Body{
   string id =1;
   string origin_id=2;
+  string aid = 3;
+  string access_token = 4;
+  string refresh_token = 5;
 }
 
 message Error {

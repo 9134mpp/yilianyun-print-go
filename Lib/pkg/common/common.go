@@ -48,5 +48,10 @@ func mtRand(min, max int) int {
 	return rand.Intn(max - min) + min
 }
 
+//
+func GetOrderId() string {
+	return fmt.Sprintf("E%04x", mtRand(0,0xffff))
+}
+
 
 
