@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/any.proto";
+
+message ErrorDescription{
+  string success = 1;
+  Body body = 2;
+}
+
+message Body{
+  string id =1;
+  string origin_id=2;
+}
+
+message Error {
+  int32 code = 1;
+  string message = 2;
+  google.protobuf.Any detail = 3;
+}

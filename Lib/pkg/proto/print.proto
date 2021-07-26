@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package proto;
+
+import "proto/common.proto";
+
+service PrintService{
+  rpc Print(GetPrintRequest)returns(GetPrintReply);
+}
+
+message GetPrintRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string content = 4;
+  string origin_id = 5;
+  string sign = 6;
+  string id = 7;
+  int64 timestamp = 8;
+}
+
+message GetPrintReply{
+  string error = 1;
+  string error_description = 2;
+  Body body = 3;
+}
