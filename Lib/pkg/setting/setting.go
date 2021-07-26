@@ -20,7 +20,7 @@ type Client struct {
 
 func Setup(){
 	var err error
-	Cfg, err = ini.Load("../Lib/Config/app.ini")
+	Cfg, err = ini.Load("Config/app.ini")
 	if err != nil {
 		log.Fatalf("Fail to parse 'app.ini':%v", err)
 	}

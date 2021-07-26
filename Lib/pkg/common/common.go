@@ -39,7 +39,6 @@ func GetSign(timestamp string) string {
 	clientId := ClientId
 	clientServer := ClientServer
 	pretreatmentData := fmt.Sprintf("%s%s%s",clientId,timestamp,clientServer)
-	log.Printf("signmd5前：%s\n",pretreatmentData)
 	m := md5.New()
 	m.Write([]byte(pretreatmentData))
 	return fmt.Sprintf("%s", hex.EncodeToString(m.Sum(nil)))

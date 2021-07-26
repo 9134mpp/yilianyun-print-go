@@ -51,12 +51,13 @@ func(a *API)GetAccessToken()([]byte, error){
 	return body, nil
 }
 
+// 文本打印接口
 func (a *API) Print(ctx context.Context, r *pd.GetPrintRequest)([]byte, error){
 	data := make(url.Values)
-	timestamp := strconv.FormatInt(r.Timestamp,10)
-	data["client_id"] = []string{r.ClientId}
+	timestamp := strconv.FormatInt(time.Now().Unix(),10)
+	data["client_id"] = []string{setting.ClientSetting.ClientId}
 	data["access_token"] = []string{r.AccessToken}
-	data["sign"] = []string{r.Sign}
+	data["sign"] = []string{common.GetSign(timestamp)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["content"] = []string{r.Content}
 	data["origin_id"] = []string{r.OriginId}

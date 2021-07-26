@@ -28,9 +28,11 @@ func (p *PrintServer)GetToken(ctx context.Context, r *pd.GetPrintRequest)(*pd.Ge
 
 	return &printReply, nil
 }
+
+
 func (p *PrintServer)Print(ctx context.Context, r *pd.GetPrintRequest)(*pd.GetPrintReply,error){
 	api := bapi.NewAPI("https://open-api.10ss.net/")
-	body, err := api.Print(ctx, r)
+	body, err := api.Print(ctx, r) 	// 调用打印
 	if err != nil {
 		return nil, err
 	}
