@@ -10,11 +10,16 @@ message ErrorDescription{
 }
 
 message Body{
-  string id =1;
-  string origin_id=2;
+  string id = 1;
+  string origin_id = 2;
   string aid = 3;
   string access_token = 4;
   string refresh_token = 5;
+  string state = 6;
+  string receiving_time = 8;
+  string print_time = 9;
+  string status = 10;
+  string content = 11;
 }
 
 message Error {

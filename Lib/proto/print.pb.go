@@ -633,6 +633,1969 @@ func (m *PrintSetVoiceRequest) GetTimestamp() int64 {
 	return 0
 }
 
+type PrintDeleteVoiceRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Aid                  string   `protobuf:"bytes,4,opt,name=aid,proto3" json:"aid,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintDeleteVoiceRequest) Reset()         { *m = PrintDeleteVoiceRequest{} }
+func (m *PrintDeleteVoiceRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintDeleteVoiceRequest) ProtoMessage()    {}
+func (*PrintDeleteVoiceRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{7}
+}
+
+func (m *PrintDeleteVoiceRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintDeleteVoiceRequest.Unmarshal(m, b)
+}
+func (m *PrintDeleteVoiceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintDeleteVoiceRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintDeleteVoiceRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintDeleteVoiceRequest.Merge(m, src)
+}
+func (m *PrintDeleteVoiceRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintDeleteVoiceRequest.Size(m)
+}
+func (m *PrintDeleteVoiceRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintDeleteVoiceRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintDeleteVoiceRequest proto.InternalMessageInfo
+
+func (m *PrintDeleteVoiceRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintDeleteVoiceRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintDeleteVoiceRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintDeleteVoiceRequest) GetAid() string {
+	if m != nil {
+		return m.Aid
+	}
+	return ""
+}
+
+func (m *PrintDeleteVoiceRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintDeleteVoiceRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintDeleteVoiceRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintDeletePrinterRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Sign                 string   `protobuf:"bytes,4,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,5,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,6,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintDeletePrinterRequest) Reset()         { *m = PrintDeletePrinterRequest{} }
+func (m *PrintDeletePrinterRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintDeletePrinterRequest) ProtoMessage()    {}
+func (*PrintDeletePrinterRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{8}
+}
+
+func (m *PrintDeletePrinterRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintDeletePrinterRequest.Unmarshal(m, b)
+}
+func (m *PrintDeletePrinterRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintDeletePrinterRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintDeletePrinterRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintDeletePrinterRequest.Merge(m, src)
+}
+func (m *PrintDeletePrinterRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintDeletePrinterRequest.Size(m)
+}
+func (m *PrintDeletePrinterRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintDeletePrinterRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintDeletePrinterRequest proto.InternalMessageInfo
+
+func (m *PrintDeletePrinterRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintDeletePrinterRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintDeletePrinterRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintDeletePrinterRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintDeletePrinterRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintDeletePrinterRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintAddPrintMenuRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Content              string   `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintAddPrintMenuRequest) Reset()         { *m = PrintAddPrintMenuRequest{} }
+func (m *PrintAddPrintMenuRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintAddPrintMenuRequest) ProtoMessage()    {}
+func (*PrintAddPrintMenuRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{9}
+}
+
+func (m *PrintAddPrintMenuRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintAddPrintMenuRequest.Unmarshal(m, b)
+}
+func (m *PrintAddPrintMenuRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintAddPrintMenuRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintAddPrintMenuRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintAddPrintMenuRequest.Merge(m, src)
+}
+func (m *PrintAddPrintMenuRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintAddPrintMenuRequest.Size(m)
+}
+func (m *PrintAddPrintMenuRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintAddPrintMenuRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintAddPrintMenuRequest proto.InternalMessageInfo
+
+func (m *PrintAddPrintMenuRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintAddPrintMenuRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintAddPrintMenuRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintAddPrintMenuRequest) GetContent() string {
+	if m != nil {
+		return m.Content
+	}
+	return ""
+}
+
+func (m *PrintAddPrintMenuRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintAddPrintMenuRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintAddPrintMenuRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintShutDownRestartRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	ResponseType         string   `protobuf:"bytes,4,opt,name=response_type,json=responseType,proto3" json:"response_type,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintShutDownRestartRequest) Reset()         { *m = PrintShutDownRestartRequest{} }
+func (m *PrintShutDownRestartRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintShutDownRestartRequest) ProtoMessage()    {}
+func (*PrintShutDownRestartRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{10}
+}
+
+func (m *PrintShutDownRestartRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintShutDownRestartRequest.Unmarshal(m, b)
+}
+func (m *PrintShutDownRestartRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintShutDownRestartRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintShutDownRestartRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintShutDownRestartRequest.Merge(m, src)
+}
+func (m *PrintShutDownRestartRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintShutDownRestartRequest.Size(m)
+}
+func (m *PrintShutDownRestartRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintShutDownRestartRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintShutDownRestartRequest proto.InternalMessageInfo
+
+func (m *PrintShutDownRestartRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintShutDownRestartRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintShutDownRestartRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintShutDownRestartRequest) GetResponseType() string {
+	if m != nil {
+		return m.ResponseType
+	}
+	return ""
+}
+
+func (m *PrintShutDownRestartRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintShutDownRestartRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintShutDownRestartRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintSetSoundRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	ResponseType         string   `protobuf:"bytes,4,opt,name=response_type,json=responseType,proto3" json:"response_type,omitempty"`
+	Voice                string   `protobuf:"bytes,5,opt,name=voice,proto3" json:"voice,omitempty"`
+	Sign                 string   `protobuf:"bytes,6,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,7,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,8,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintSetSoundRequest) Reset()         { *m = PrintSetSoundRequest{} }
+func (m *PrintSetSoundRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintSetSoundRequest) ProtoMessage()    {}
+func (*PrintSetSoundRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{11}
+}
+
+func (m *PrintSetSoundRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintSetSoundRequest.Unmarshal(m, b)
+}
+func (m *PrintSetSoundRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintSetSoundRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintSetSoundRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintSetSoundRequest.Merge(m, src)
+}
+func (m *PrintSetSoundRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintSetSoundRequest.Size(m)
+}
+func (m *PrintSetSoundRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintSetSoundRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintSetSoundRequest proto.InternalMessageInfo
+
+func (m *PrintSetSoundRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintSetSoundRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintSetSoundRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintSetSoundRequest) GetResponseType() string {
+	if m != nil {
+		return m.ResponseType
+	}
+	return ""
+}
+
+func (m *PrintSetSoundRequest) GetVoice() string {
+	if m != nil {
+		return m.Voice
+	}
+	return ""
+}
+
+func (m *PrintSetSoundRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintSetSoundRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintSetSoundRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintInfoRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Sign                 string   `protobuf:"bytes,4,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,5,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,6,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintInfoRequest) Reset()         { *m = PrintInfoRequest{} }
+func (m *PrintInfoRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintInfoRequest) ProtoMessage()    {}
+func (*PrintInfoRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{12}
+}
+
+func (m *PrintInfoRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintInfoRequest.Unmarshal(m, b)
+}
+func (m *PrintInfoRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintInfoRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintInfoRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintInfoRequest.Merge(m, src)
+}
+func (m *PrintInfoRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintInfoRequest.Size(m)
+}
+func (m *PrintInfoRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintInfoRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintInfoRequest proto.InternalMessageInfo
+
+func (m *PrintInfoRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintInfoRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintInfoRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintInfoRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintInfoRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintInfoRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintCancelAllRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Sign                 string   `protobuf:"bytes,4,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,5,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,6,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintCancelAllRequest) Reset()         { *m = PrintCancelAllRequest{} }
+func (m *PrintCancelAllRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintCancelAllRequest) ProtoMessage()    {}
+func (*PrintCancelAllRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{13}
+}
+
+func (m *PrintCancelAllRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintCancelAllRequest.Unmarshal(m, b)
+}
+func (m *PrintCancelAllRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintCancelAllRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintCancelAllRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintCancelAllRequest.Merge(m, src)
+}
+func (m *PrintCancelAllRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintCancelAllRequest.Size(m)
+}
+func (m *PrintCancelAllRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintCancelAllRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintCancelAllRequest proto.InternalMessageInfo
+
+func (m *PrintCancelAllRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintCancelAllRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintCancelAllRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintCancelAllRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintCancelAllRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintCancelAllRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintCaneLoneRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	OrderId              string   `protobuf:"bytes,4,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintCaneLoneRequest) Reset()         { *m = PrintCaneLoneRequest{} }
+func (m *PrintCaneLoneRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintCaneLoneRequest) ProtoMessage()    {}
+func (*PrintCaneLoneRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{14}
+}
+
+func (m *PrintCaneLoneRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintCaneLoneRequest.Unmarshal(m, b)
+}
+func (m *PrintCaneLoneRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintCaneLoneRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintCaneLoneRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintCaneLoneRequest.Merge(m, src)
+}
+func (m *PrintCaneLoneRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintCaneLoneRequest.Size(m)
+}
+func (m *PrintCaneLoneRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintCaneLoneRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintCaneLoneRequest proto.InternalMessageInfo
+
+func (m *PrintCaneLoneRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintCaneLoneRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintCaneLoneRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintCaneLoneRequest) GetOrderId() string {
+	if m != nil {
+		return m.OrderId
+	}
+	return ""
+}
+
+func (m *PrintCaneLoneRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintCaneLoneRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintCaneLoneRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintSetIconRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	ImgUrl               string   `protobuf:"bytes,4,opt,name=img_url,json=imgUrl,proto3" json:"img_url,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintSetIconRequest) Reset()         { *m = PrintSetIconRequest{} }
+func (m *PrintSetIconRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintSetIconRequest) ProtoMessage()    {}
+func (*PrintSetIconRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{15}
+}
+
+func (m *PrintSetIconRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintSetIconRequest.Unmarshal(m, b)
+}
+func (m *PrintSetIconRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintSetIconRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintSetIconRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintSetIconRequest.Merge(m, src)
+}
+func (m *PrintSetIconRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintSetIconRequest.Size(m)
+}
+func (m *PrintSetIconRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintSetIconRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintSetIconRequest proto.InternalMessageInfo
+
+func (m *PrintSetIconRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintSetIconRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintSetIconRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintSetIconRequest) GetImgUrl() string {
+	if m != nil {
+		return m.ImgUrl
+	}
+	return ""
+}
+
+func (m *PrintSetIconRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintSetIconRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintSetIconRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintDeleteIconRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintDeleteIconRequest) Reset()         { *m = PrintDeleteIconRequest{} }
+func (m *PrintDeleteIconRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintDeleteIconRequest) ProtoMessage()    {}
+func (*PrintDeleteIconRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{16}
+}
+
+func (m *PrintDeleteIconRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintDeleteIconRequest.Unmarshal(m, b)
+}
+func (m *PrintDeleteIconRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintDeleteIconRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintDeleteIconRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintDeleteIconRequest.Merge(m, src)
+}
+func (m *PrintDeleteIconRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintDeleteIconRequest.Size(m)
+}
+func (m *PrintDeleteIconRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintDeleteIconRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintDeleteIconRequest proto.InternalMessageInfo
+
+func (m *PrintDeleteIconRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintDeleteIconRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintDeleteIconRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintDeleteIconRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintDeleteIconRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintDeleteIconRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintBtnPrintRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	ResponseType         string   `protobuf:"bytes,4,opt,name=response_type,json=responseType,proto3" json:"response_type,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintBtnPrintRequest) Reset()         { *m = PrintBtnPrintRequest{} }
+func (m *PrintBtnPrintRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintBtnPrintRequest) ProtoMessage()    {}
+func (*PrintBtnPrintRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{17}
+}
+
+func (m *PrintBtnPrintRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintBtnPrintRequest.Unmarshal(m, b)
+}
+func (m *PrintBtnPrintRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintBtnPrintRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintBtnPrintRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintBtnPrintRequest.Merge(m, src)
+}
+func (m *PrintBtnPrintRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintBtnPrintRequest.Size(m)
+}
+func (m *PrintBtnPrintRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintBtnPrintRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintBtnPrintRequest proto.InternalMessageInfo
+
+func (m *PrintBtnPrintRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintBtnPrintRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintBtnPrintRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintBtnPrintRequest) GetResponseType() string {
+	if m != nil {
+		return m.ResponseType
+	}
+	return ""
+}
+
+func (m *PrintBtnPrintRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintBtnPrintRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintBtnPrintRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintGetOrderRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	ResponseType         string   `protobuf:"bytes,4,opt,name=response_type,json=responseType,proto3" json:"response_type,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintGetOrderRequest) Reset()         { *m = PrintGetOrderRequest{} }
+func (m *PrintGetOrderRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintGetOrderRequest) ProtoMessage()    {}
+func (*PrintGetOrderRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{18}
+}
+
+func (m *PrintGetOrderRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintGetOrderRequest.Unmarshal(m, b)
+}
+func (m *PrintGetOrderRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintGetOrderRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintGetOrderRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintGetOrderRequest.Merge(m, src)
+}
+func (m *PrintGetOrderRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintGetOrderRequest.Size(m)
+}
+func (m *PrintGetOrderRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintGetOrderRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintGetOrderRequest proto.InternalMessageInfo
+
+func (m *PrintGetOrderRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintGetOrderRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintGetOrderRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintGetOrderRequest) GetResponseType() string {
+	if m != nil {
+		return m.ResponseType
+	}
+	return ""
+}
+
+func (m *PrintGetOrderRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintGetOrderRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintGetOrderRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintSetPushUrlRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Cmd                  string   `protobuf:"bytes,4,opt,name=cmd,proto3" json:"cmd,omitempty"`
+	Url                  string   `protobuf:"bytes,5,opt,name=url,proto3" json:"url,omitempty"`
+	Status               string   `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
+	Sign                 string   `protobuf:"bytes,7,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,8,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,9,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintSetPushUrlRequest) Reset()         { *m = PrintSetPushUrlRequest{} }
+func (m *PrintSetPushUrlRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintSetPushUrlRequest) ProtoMessage()    {}
+func (*PrintSetPushUrlRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{19}
+}
+
+func (m *PrintSetPushUrlRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintSetPushUrlRequest.Unmarshal(m, b)
+}
+func (m *PrintSetPushUrlRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintSetPushUrlRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintSetPushUrlRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintSetPushUrlRequest.Merge(m, src)
+}
+func (m *PrintSetPushUrlRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintSetPushUrlRequest.Size(m)
+}
+func (m *PrintSetPushUrlRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintSetPushUrlRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintSetPushUrlRequest proto.InternalMessageInfo
+
+func (m *PrintSetPushUrlRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintSetPushUrlRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintSetPushUrlRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintSetPushUrlRequest) GetCmd() string {
+	if m != nil {
+		return m.Cmd
+	}
+	return ""
+}
+
+func (m *PrintSetPushUrlRequest) GetUrl() string {
+	if m != nil {
+		return m.Url
+	}
+	return ""
+}
+
+func (m *PrintSetPushUrlRequest) GetStatus() string {
+	if m != nil {
+		return m.Status
+	}
+	return ""
+}
+
+func (m *PrintSetPushUrlRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintSetPushUrlRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintSetPushUrlRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintGetOrderStatusRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	OrderId              string   `protobuf:"bytes,4,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty"`
+	Sign                 string   `protobuf:"bytes,5,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,6,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,7,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintGetOrderStatusRequest) Reset()         { *m = PrintGetOrderStatusRequest{} }
+func (m *PrintGetOrderStatusRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintGetOrderStatusRequest) ProtoMessage()    {}
+func (*PrintGetOrderStatusRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{20}
+}
+
+func (m *PrintGetOrderStatusRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintGetOrderStatusRequest.Unmarshal(m, b)
+}
+func (m *PrintGetOrderStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintGetOrderStatusRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintGetOrderStatusRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintGetOrderStatusRequest.Merge(m, src)
+}
+func (m *PrintGetOrderStatusRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintGetOrderStatusRequest.Size(m)
+}
+func (m *PrintGetOrderStatusRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintGetOrderStatusRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintGetOrderStatusRequest proto.InternalMessageInfo
+
+func (m *PrintGetOrderStatusRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintGetOrderStatusRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintGetOrderStatusRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintGetOrderStatusRequest) GetOrderId() string {
+	if m != nil {
+		return m.OrderId
+	}
+	return ""
+}
+
+func (m *PrintGetOrderStatusRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintGetOrderStatusRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintGetOrderStatusRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintGetOrderPagingListRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	PageIndex            string   `protobuf:"bytes,4,opt,name=page_index,json=pageIndex,proto3" json:"page_index,omitempty"`
+	PageSize             string   `protobuf:"bytes,5,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	Sign                 string   `protobuf:"bytes,6,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,7,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,8,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintGetOrderPagingListRequest) Reset()         { *m = PrintGetOrderPagingListRequest{} }
+func (m *PrintGetOrderPagingListRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintGetOrderPagingListRequest) ProtoMessage()    {}
+func (*PrintGetOrderPagingListRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{21}
+}
+
+func (m *PrintGetOrderPagingListRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintGetOrderPagingListRequest.Unmarshal(m, b)
+}
+func (m *PrintGetOrderPagingListRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintGetOrderPagingListRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintGetOrderPagingListRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintGetOrderPagingListRequest.Merge(m, src)
+}
+func (m *PrintGetOrderPagingListRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintGetOrderPagingListRequest.Size(m)
+}
+func (m *PrintGetOrderPagingListRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintGetOrderPagingListRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintGetOrderPagingListRequest proto.InternalMessageInfo
+
+func (m *PrintGetOrderPagingListRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintGetOrderPagingListRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintGetOrderPagingListRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintGetOrderPagingListRequest) GetPageIndex() string {
+	if m != nil {
+		return m.PageIndex
+	}
+	return ""
+}
+
+func (m *PrintGetOrderPagingListRequest) GetPageSize() string {
+	if m != nil {
+		return m.PageSize
+	}
+	return ""
+}
+
+func (m *PrintGetOrderPagingListRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintGetOrderPagingListRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintGetOrderPagingListRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type PrintGetPrintStatusRequest struct {
+	ClientId             string   `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	AccessToken          string   `protobuf:"bytes,2,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	MachineCode          string   `protobuf:"bytes,3,opt,name=machine_code,json=machineCode,proto3" json:"machine_code,omitempty"`
+	Sign                 string   `protobuf:"bytes,4,opt,name=sign,proto3" json:"sign,omitempty"`
+	Id                   string   `protobuf:"bytes,5,opt,name=id,proto3" json:"id,omitempty"`
+	Timestamp            int64    `protobuf:"varint,6,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *PrintGetPrintStatusRequest) Reset()         { *m = PrintGetPrintStatusRequest{} }
+func (m *PrintGetPrintStatusRequest) String() string { return proto.CompactTextString(m) }
+func (*PrintGetPrintStatusRequest) ProtoMessage()    {}
+func (*PrintGetPrintStatusRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{22}
+}
+
+func (m *PrintGetPrintStatusRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrintGetPrintStatusRequest.Unmarshal(m, b)
+}
+func (m *PrintGetPrintStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrintGetPrintStatusRequest.Marshal(b, m, deterministic)
+}
+func (m *PrintGetPrintStatusRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrintGetPrintStatusRequest.Merge(m, src)
+}
+func (m *PrintGetPrintStatusRequest) XXX_Size() int {
+	return xxx_messageInfo_PrintGetPrintStatusRequest.Size(m)
+}
+func (m *PrintGetPrintStatusRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrintGetPrintStatusRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_PrintGetPrintStatusRequest proto.InternalMessageInfo
+
+func (m *PrintGetPrintStatusRequest) GetClientId() string {
+	if m != nil {
+		return m.ClientId
+	}
+	return ""
+}
+
+func (m *PrintGetPrintStatusRequest) GetAccessToken() string {
+	if m != nil {
+		return m.AccessToken
+	}
+	return ""
+}
+
+func (m *PrintGetPrintStatusRequest) GetMachineCode() string {
+	if m != nil {
+		return m.MachineCode
+	}
+	return ""
+}
+
+func (m *PrintGetPrintStatusRequest) GetSign() string {
+	if m != nil {
+		return m.Sign
+	}
+	return ""
+}
+
+func (m *PrintGetPrintStatusRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *PrintGetPrintStatusRequest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type ExpressPrintContent struct {
+	MemberID             string                `protobuf:"bytes,1,opt,name=MemberID,proto3" json:"MemberID,omitempty"`
+	CustomerName         string                `protobuf:"bytes,2,opt,name=CustomerName,proto3" json:"CustomerName,omitempty"`
+	CustomerPwd          string                `protobuf:"bytes,3,opt,name=CustomerPwd,proto3" json:"CustomerPwd,omitempty"`
+	SendSite             string                `protobuf:"bytes,4,opt,name=SendSite,proto3" json:"SendSite,omitempty"`
+	ShipperCode          string                `protobuf:"bytes,5,opt,name=ShipperCode,proto3" json:"ShipperCode,omitempty"`
+	LogisticCode         string                `protobuf:"bytes,6,opt,name=LogisticCode,proto3" json:"LogisticCode,omitempty"`
+	OrderCode            string                `protobuf:"bytes,7,opt,name=OrderCode,proto3" json:"OrderCode,omitempty"`
+	ThrOrderCode         string                `protobuf:"bytes,8,opt,name=ThrOrderCode,proto3" json:"ThrOrderCode,omitempty"`
+	MonthCode            string                `protobuf:"bytes,9,opt,name=MonthCode,proto3" json:"MonthCode,omitempty"`
+	PayType              int64                 `protobuf:"varint,10,opt,name=PayType,proto3" json:"PayType,omitempty"`
+	ExpType              string                `protobuf:"bytes,11,opt,name=ExpType,proto3" json:"ExpType,omitempty"`
+	IsNotice             int64                 `protobuf:"varint,12,opt,name=IsNotice,proto3" json:"IsNotice,omitempty"`
+	Cost                 float64               `protobuf:"fixed64,13,opt,name=Cost,proto3" json:"Cost,omitempty"`
+	OtherCost            float64               `protobuf:"fixed64,14,opt,name=OtherCost,proto3" json:"OtherCost,omitempty"`
+	Receiver             *ExpressPrintReceiver `protobuf:"bytes,15,opt,name=Receiver,proto3" json:"Receiver,omitempty"`
+	Sender               *ExpressPrintSender   `protobuf:"bytes,16,opt,name=Sender,proto3" json:"Sender,omitempty"`
+	StartDate            string                `protobuf:"bytes,17,opt,name=StartDate,proto3" json:"StartDate,omitempty"`
+	EndDate              string                `protobuf:"bytes,18,opt,name=EndDate,proto3" json:"EndDate,omitempty"`
+	Weight               float64               `protobuf:"fixed64,19,opt,name=Weight,proto3" json:"Weight,omitempty"`
+	Quantity             int64                 `protobuf:"varint,20,opt,name=Quantity,proto3" json:"Quantity,omitempty"`
+	Volume               float64               `protobuf:"fixed64,21,opt,name=Volume,proto3" json:"Volume,omitempty"`
+	Remark               string                `protobuf:"bytes,22,opt,name=Remark,proto3" json:"Remark,omitempty"`
+	AddService           *ExpressAddService    `protobuf:"bytes,23,opt,name=AddService,proto3" json:"AddService,omitempty"`
+	Commodity            *ExpressCommodity     `protobuf:"bytes,24,opt,name=Commodity,proto3" json:"Commodity,omitempty"`
+	TemplateSize         string                `protobuf:"bytes,25,opt,name=TemplateSize,proto3" json:"TemplateSize,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
+	XXX_unrecognized     []byte                `json:"-"`
+	XXX_sizecache        int32                 `json:"-"`
+}
+
+func (m *ExpressPrintContent) Reset()         { *m = ExpressPrintContent{} }
+func (m *ExpressPrintContent) String() string { return proto.CompactTextString(m) }
+func (*ExpressPrintContent) ProtoMessage()    {}
+func (*ExpressPrintContent) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{23}
+}
+
+func (m *ExpressPrintContent) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExpressPrintContent.Unmarshal(m, b)
+}
+func (m *ExpressPrintContent) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExpressPrintContent.Marshal(b, m, deterministic)
+}
+func (m *ExpressPrintContent) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExpressPrintContent.Merge(m, src)
+}
+func (m *ExpressPrintContent) XXX_Size() int {
+	return xxx_messageInfo_ExpressPrintContent.Size(m)
+}
+func (m *ExpressPrintContent) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExpressPrintContent.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExpressPrintContent proto.InternalMessageInfo
+
+func (m *ExpressPrintContent) GetMemberID() string {
+	if m != nil {
+		return m.MemberID
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetCustomerName() string {
+	if m != nil {
+		return m.CustomerName
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetCustomerPwd() string {
+	if m != nil {
+		return m.CustomerPwd
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetSendSite() string {
+	if m != nil {
+		return m.SendSite
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetShipperCode() string {
+	if m != nil {
+		return m.ShipperCode
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetLogisticCode() string {
+	if m != nil {
+		return m.LogisticCode
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetOrderCode() string {
+	if m != nil {
+		return m.OrderCode
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetThrOrderCode() string {
+	if m != nil {
+		return m.ThrOrderCode
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetMonthCode() string {
+	if m != nil {
+		return m.MonthCode
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetPayType() int64 {
+	if m != nil {
+		return m.PayType
+	}
+	return 0
+}
+
+func (m *ExpressPrintContent) GetExpType() string {
+	if m != nil {
+		return m.ExpType
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetIsNotice() int64 {
+	if m != nil {
+		return m.IsNotice
+	}
+	return 0
+}
+
+func (m *ExpressPrintContent) GetCost() float64 {
+	if m != nil {
+		return m.Cost
+	}
+	return 0
+}
+
+func (m *ExpressPrintContent) GetOtherCost() float64 {
+	if m != nil {
+		return m.OtherCost
+	}
+	return 0
+}
+
+func (m *ExpressPrintContent) GetReceiver() *ExpressPrintReceiver {
+	if m != nil {
+		return m.Receiver
+	}
+	return nil
+}
+
+func (m *ExpressPrintContent) GetSender() *ExpressPrintSender {
+	if m != nil {
+		return m.Sender
+	}
+	return nil
+}
+
+func (m *ExpressPrintContent) GetStartDate() string {
+	if m != nil {
+		return m.StartDate
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetEndDate() string {
+	if m != nil {
+		return m.EndDate
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetWeight() float64 {
+	if m != nil {
+		return m.Weight
+	}
+	return 0
+}
+
+func (m *ExpressPrintContent) GetQuantity() int64 {
+	if m != nil {
+		return m.Quantity
+	}
+	return 0
+}
+
+func (m *ExpressPrintContent) GetVolume() float64 {
+	if m != nil {
+		return m.Volume
+	}
+	return 0
+}
+
+func (m *ExpressPrintContent) GetRemark() string {
+	if m != nil {
+		return m.Remark
+	}
+	return ""
+}
+
+func (m *ExpressPrintContent) GetAddService() *ExpressAddService {
+	if m != nil {
+		return m.AddService
+	}
+	return nil
+}
+
+func (m *ExpressPrintContent) GetCommodity() *ExpressCommodity {
+	if m != nil {
+		return m.Commodity
+	}
+	return nil
+}
+
+func (m *ExpressPrintContent) GetTemplateSize() string {
+	if m != nil {
+		return m.TemplateSize
+	}
+	return ""
+}
+
+type ExpressPrintReceiver struct {
+	Company              string   `protobuf:"bytes,1,opt,name=Company,proto3" json:"Company,omitempty"`
+	Name                 string   `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	Tel                  string   `protobuf:"bytes,3,opt,name=Tel,proto3" json:"Tel,omitempty"`
+	Mobile               string   `protobuf:"bytes,4,opt,name=Mobile,proto3" json:"Mobile,omitempty"`
+	PostCode             string   `protobuf:"bytes,5,opt,name=PostCode,proto3" json:"PostCode,omitempty"`
+	ProvinceName         string   `protobuf:"bytes,6,opt,name=ProvinceName,proto3" json:"ProvinceName,omitempty"`
+	CityName             string   `protobuf:"bytes,7,opt,name=CityName,proto3" json:"CityName,omitempty"`
+	ExpAreaName          string   `protobuf:"bytes,8,opt,name=ExpAreaName,proto3" json:"ExpAreaName,omitempty"`
+	Address              string   `protobuf:"bytes,9,opt,name=Address,proto3" json:"Address,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExpressPrintReceiver) Reset()         { *m = ExpressPrintReceiver{} }
+func (m *ExpressPrintReceiver) String() string { return proto.CompactTextString(m) }
+func (*ExpressPrintReceiver) ProtoMessage()    {}
+func (*ExpressPrintReceiver) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{24}
+}
+
+func (m *ExpressPrintReceiver) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExpressPrintReceiver.Unmarshal(m, b)
+}
+func (m *ExpressPrintReceiver) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExpressPrintReceiver.Marshal(b, m, deterministic)
+}
+func (m *ExpressPrintReceiver) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExpressPrintReceiver.Merge(m, src)
+}
+func (m *ExpressPrintReceiver) XXX_Size() int {
+	return xxx_messageInfo_ExpressPrintReceiver.Size(m)
+}
+func (m *ExpressPrintReceiver) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExpressPrintReceiver.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExpressPrintReceiver proto.InternalMessageInfo
+
+func (m *ExpressPrintReceiver) GetCompany() string {
+	if m != nil {
+		return m.Company
+	}
+	return ""
+}
+
+func (m *ExpressPrintReceiver) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *ExpressPrintReceiver) GetTel() string {
+	if m != nil {
+		return m.Tel
+	}
+	return ""
+}
+
+func (m *ExpressPrintReceiver) GetMobile() string {
+	if m != nil {
+		return m.Mobile
+	}
+	return ""
+}
+
+func (m *ExpressPrintReceiver) GetPostCode() string {
+	if m != nil {
+		return m.PostCode
+	}
+	return ""
+}
+
+func (m *ExpressPrintReceiver) GetProvinceName() string {
+	if m != nil {
+		return m.ProvinceName
+	}
+	return ""
+}
+
+func (m *ExpressPrintReceiver) GetCityName() string {
+	if m != nil {
+		return m.CityName
+	}
+	return ""
+}
+
+func (m *ExpressPrintReceiver) GetExpAreaName() string {
+	if m != nil {
+		return m.ExpAreaName
+	}
+	return ""
+}
+
+func (m *ExpressPrintReceiver) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+type ExpressPrintSender struct {
+	Company              string   `protobuf:"bytes,1,opt,name=Company,proto3" json:"Company,omitempty"`
+	Name                 string   `protobuf:"bytes,2,opt,name=Name,proto3" json:"Name,omitempty"`
+	Tel                  string   `protobuf:"bytes,3,opt,name=Tel,proto3" json:"Tel,omitempty"`
+	Mobile               string   `protobuf:"bytes,4,opt,name=Mobile,proto3" json:"Mobile,omitempty"`
+	PostCode             string   `protobuf:"bytes,5,opt,name=PostCode,proto3" json:"PostCode,omitempty"`
+	ProvinceName         string   `protobuf:"bytes,6,opt,name=ProvinceName,proto3" json:"ProvinceName,omitempty"`
+	CityName             string   `protobuf:"bytes,7,opt,name=CityName,proto3" json:"CityName,omitempty"`
+	ExpAreaName          string   `protobuf:"bytes,8,opt,name=ExpAreaName,proto3" json:"ExpAreaName,omitempty"`
+	Address              string   `protobuf:"bytes,9,opt,name=Address,proto3" json:"Address,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExpressPrintSender) Reset()         { *m = ExpressPrintSender{} }
+func (m *ExpressPrintSender) String() string { return proto.CompactTextString(m) }
+func (*ExpressPrintSender) ProtoMessage()    {}
+func (*ExpressPrintSender) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{25}
+}
+
+func (m *ExpressPrintSender) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExpressPrintSender.Unmarshal(m, b)
+}
+func (m *ExpressPrintSender) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExpressPrintSender.Marshal(b, m, deterministic)
+}
+func (m *ExpressPrintSender) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExpressPrintSender.Merge(m, src)
+}
+func (m *ExpressPrintSender) XXX_Size() int {
+	return xxx_messageInfo_ExpressPrintSender.Size(m)
+}
+func (m *ExpressPrintSender) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExpressPrintSender.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExpressPrintSender proto.InternalMessageInfo
+
+func (m *ExpressPrintSender) GetCompany() string {
+	if m != nil {
+		return m.Company
+	}
+	return ""
+}
+
+func (m *ExpressPrintSender) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *ExpressPrintSender) GetTel() string {
+	if m != nil {
+		return m.Tel
+	}
+	return ""
+}
+
+func (m *ExpressPrintSender) GetMobile() string {
+	if m != nil {
+		return m.Mobile
+	}
+	return ""
+}
+
+func (m *ExpressPrintSender) GetPostCode() string {
+	if m != nil {
+		return m.PostCode
+	}
+	return ""
+}
+
+func (m *ExpressPrintSender) GetProvinceName() string {
+	if m != nil {
+		return m.ProvinceName
+	}
+	return ""
+}
+
+func (m *ExpressPrintSender) GetCityName() string {
+	if m != nil {
+		return m.CityName
+	}
+	return ""
+}
+
+func (m *ExpressPrintSender) GetExpAreaName() string {
+	if m != nil {
+		return m.ExpAreaName
+	}
+	return ""
+}
+
+func (m *ExpressPrintSender) GetAddress() string {
+	if m != nil {
+		return m.Address
+	}
+	return ""
+}
+
+type ExpressAddService struct {
+	Name                 string   `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
+	Value                string   `protobuf:"bytes,2,opt,name=Value,proto3" json:"Value,omitempty"`
+	CustomerID           string   `protobuf:"bytes,3,opt,name=CustomerID,proto3" json:"CustomerID,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExpressAddService) Reset()         { *m = ExpressAddService{} }
+func (m *ExpressAddService) String() string { return proto.CompactTextString(m) }
+func (*ExpressAddService) ProtoMessage()    {}
+func (*ExpressAddService) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{26}
+}
+
+func (m *ExpressAddService) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExpressAddService.Unmarshal(m, b)
+}
+func (m *ExpressAddService) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExpressAddService.Marshal(b, m, deterministic)
+}
+func (m *ExpressAddService) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExpressAddService.Merge(m, src)
+}
+func (m *ExpressAddService) XXX_Size() int {
+	return xxx_messageInfo_ExpressAddService.Size(m)
+}
+func (m *ExpressAddService) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExpressAddService.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExpressAddService proto.InternalMessageInfo
+
+func (m *ExpressAddService) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *ExpressAddService) GetValue() string {
+	if m != nil {
+		return m.Value
+	}
+	return ""
+}
+
+func (m *ExpressAddService) GetCustomerID() string {
+	if m != nil {
+		return m.CustomerID
+	}
+	return ""
+}
+
+type ExpressCommodity struct {
+	GoodsName            string   `protobuf:"bytes,1,opt,name=GoodsName,proto3" json:"GoodsName,omitempty"`
+	GoodsCode            string   `protobuf:"bytes,2,opt,name=GoodsCode,proto3" json:"GoodsCode,omitempty"`
+	Goodsquantity        int64    `protobuf:"varint,3,opt,name=Goodsquantity,proto3" json:"Goodsquantity,omitempty"`
+	GoodsPrice           float64  `protobuf:"fixed64,4,opt,name=GoodsPrice,proto3" json:"GoodsPrice,omitempty"`
+	GoodsWeight          float64  `protobuf:"fixed64,5,opt,name=GoodsWeight,proto3" json:"GoodsWeight,omitempty"`
+	GoodsDesc            string   `protobuf:"bytes,6,opt,name=GoodsDesc,proto3" json:"GoodsDesc,omitempty"`
+	GoodsVol             float64  `protobuf:"fixed64,7,opt,name=GoodsVol,proto3" json:"GoodsVol,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ExpressCommodity) Reset()         { *m = ExpressCommodity{} }
+func (m *ExpressCommodity) String() string { return proto.CompactTextString(m) }
+func (*ExpressCommodity) ProtoMessage()    {}
+func (*ExpressCommodity) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e13c50d52a05c362, []int{27}
+}
+
+func (m *ExpressCommodity) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ExpressCommodity.Unmarshal(m, b)
+}
+func (m *ExpressCommodity) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ExpressCommodity.Marshal(b, m, deterministic)
+}
+func (m *ExpressCommodity) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ExpressCommodity.Merge(m, src)
+}
+func (m *ExpressCommodity) XXX_Size() int {
+	return xxx_messageInfo_ExpressCommodity.Size(m)
+}
+func (m *ExpressCommodity) XXX_DiscardUnknown() {
+	xxx_messageInfo_ExpressCommodity.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ExpressCommodity proto.InternalMessageInfo
+
+func (m *ExpressCommodity) GetGoodsName() string {
+	if m != nil {
+		return m.GoodsName
+	}
+	return ""
+}
+
+func (m *ExpressCommodity) GetGoodsCode() string {
+	if m != nil {
+		return m.GoodsCode
+	}
+	return ""
+}
+
+func (m *ExpressCommodity) GetGoodsquantity() int64 {
+	if m != nil {
+		return m.Goodsquantity
+	}
+	return 0
+}
+
+func (m *ExpressCommodity) GetGoodsPrice() float64 {
+	if m != nil {
+		return m.GoodsPrice
+	}
+	return 0
+}
+
+func (m *ExpressCommodity) GetGoodsWeight() float64 {
+	if m != nil {
+		return m.GoodsWeight
+	}
+	return 0
+}
+
+func (m *ExpressCommodity) GetGoodsDesc() string {
+	if m != nil {
+		return m.GoodsDesc
+	}
+	return ""
+}
+
+func (m *ExpressCommodity) GetGoodsVol() float64 {
+	if m != nil {
+		return m.GoodsVol
+	}
+	return 0
+}
+
 func init() {
 	proto.RegisterType((*PrintRequest)(nil), "proto.PrintRequest")
 	proto.RegisterType((*PrintReply)(nil), "proto.PrintReply")
@@ -641,50 +2604,143 @@ func init() {
 	proto.RegisterType((*PicturePrintRequest)(nil), "proto.PicturePrintRequest")
 	proto.RegisterType((*ExpressPrintRequest)(nil), "proto.ExpressPrintRequest")
 	proto.RegisterType((*PrintSetVoiceRequest)(nil), "proto.PrintSetVoiceRequest")
+	proto.RegisterType((*PrintDeleteVoiceRequest)(nil), "proto.PrintDeleteVoiceRequest")
+	proto.RegisterType((*PrintDeletePrinterRequest)(nil), "proto.PrintDeletePrinterRequest")
+	proto.RegisterType((*PrintAddPrintMenuRequest)(nil), "proto.PrintAddPrintMenuRequest")
+	proto.RegisterType((*PrintShutDownRestartRequest)(nil), "proto.PrintShutDownRestartRequest")
+	proto.RegisterType((*PrintSetSoundRequest)(nil), "proto.PrintSetSoundRequest")
+	proto.RegisterType((*PrintInfoRequest)(nil), "proto.PrintInfoRequest")
+	proto.RegisterType((*PrintCancelAllRequest)(nil), "proto.PrintCancelAllRequest")
+	proto.RegisterType((*PrintCaneLoneRequest)(nil), "proto.PrintCaneLoneRequest")
+	proto.RegisterType((*PrintSetIconRequest)(nil), "proto.PrintSetIconRequest")
+	proto.RegisterType((*PrintDeleteIconRequest)(nil), "proto.PrintDeleteIconRequest")
+	proto.RegisterType((*PrintBtnPrintRequest)(nil), "proto.PrintBtnPrintRequest")
+	proto.RegisterType((*PrintGetOrderRequest)(nil), "proto.PrintGetOrderRequest")
+	proto.RegisterType((*PrintSetPushUrlRequest)(nil), "proto.PrintSetPushUrlRequest")
+	proto.RegisterType((*PrintGetOrderStatusRequest)(nil), "proto.PrintGetOrderStatusRequest")
+	proto.RegisterType((*PrintGetOrderPagingListRequest)(nil), "proto.PrintGetOrderPagingListRequest")
+	proto.RegisterType((*PrintGetPrintStatusRequest)(nil), "proto.PrintGetPrintStatusRequest")
+	proto.RegisterType((*ExpressPrintContent)(nil), "proto.ExpressPrintContent")
+	proto.RegisterType((*ExpressPrintReceiver)(nil), "proto.ExpressPrintReceiver")
+	proto.RegisterType((*ExpressPrintSender)(nil), "proto.ExpressPrintSender")
+	proto.RegisterType((*ExpressAddService)(nil), "proto.ExpressAddService")
+	proto.RegisterType((*ExpressCommodity)(nil), "proto.ExpressCommodity")
 }
 
 func init() { proto.RegisterFile("proto/print.proto", fileDescriptor_e13c50d52a05c362) }
 
 var fileDescriptor_e13c50d52a05c362 = []byte{
-	// 596 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x54, 0xcf, 0x6e, 0xd3, 0x4e,
-	0x10, 0x96, 0x9d, 0x38, 0x89, 0x27, 0xf9, 0xfd, 0x68, 0x36, 0x91, 0xb0, 0x52, 0x50, 0x4b, 0x4e,
-	0x95, 0x90, 0x5a, 0x29, 0x9c, 0x11, 0x88, 0x3f, 0xad, 0x7a, 0xa2, 0x4a, 0x0b, 0x57, 0xcb, 0x5d,
-	0x0f, 0xe9, 0x0a, 0xdb, 0x6b, 0x76, 0x37, 0x88, 0xdc, 0x78, 0x16, 0x5e, 0x85, 0xb7, 0xe1, 0x86,
-	0xc4, 0x81, 0x23, 0xf2, 0xee, 0xc6, 0x75, 0x1c, 0x57, 0xf4, 0x42, 0xc5, 0xc9, 0x3b, 0xdf, 0xcc,
-	0x78, 0xf6, 0xfb, 0x66, 0x76, 0x60, 0x98, 0x0b, 0xae, 0xf8, 0x51, 0x2e, 0x58, 0xa6, 0x0e, 0xf5,
-	0x99, 0x78, 0xfa, 0x33, 0x21, 0xc6, 0x43, 0x79, 0x9a, 0xf2, 0xcc, 0xb8, 0xa6, 0xdf, 0x1d, 0x18,
-	0x9c, 0x15, 0xa1, 0x73, 0xfc, 0xb8, 0x44, 0xa9, 0xc8, 0x2e, 0xf8, 0x34, 0x61, 0x98, 0xa9, 0x90,
-	0xc5, 0x81, 0xb3, 0xef, 0x1c, 0xf8, 0xf3, 0x9e, 0x01, 0x4e, 0x63, 0xf2, 0x08, 0x06, 0x11, 0xa5,
-	0x28, 0x65, 0xa8, 0xf8, 0x07, 0xcc, 0x02, 0x57, 0xfb, 0xfb, 0x06, 0xbb, 0x28, 0xa0, 0x22, 0x24,
-	0x8d, 0xe8, 0x15, 0xcb, 0x30, 0xa4, 0x3c, 0xc6, 0xa0, 0x65, 0x42, 0x2c, 0xf6, 0x92, 0xc7, 0x48,
-	0x02, 0xe8, 0x52, 0x9e, 0x29, 0xcc, 0x54, 0xd0, 0xd6, 0xde, 0xb5, 0x59, 0x14, 0xe7, 0x82, 0x2d,
-	0x58, 0x56, 0x14, 0xf7, 0x4c, 0x71, 0x03, 0x9c, 0xc6, 0x84, 0x40, 0x5b, 0xb2, 0x45, 0x16, 0x74,
-	0x34, 0xae, 0xcf, 0xe4, 0x7f, 0x70, 0x59, 0x1c, 0x74, 0x35, 0xe2, 0xb2, 0x98, 0x3c, 0x00, 0x5f,
-	0xb1, 0x14, 0xa5, 0x8a, 0xd2, 0x3c, 0xe8, 0xed, 0x3b, 0x07, 0xad, 0xf9, 0x35, 0x30, 0xcd, 0x01,
-	0x2c, 0xd7, 0x3c, 0x59, 0x91, 0x31, 0x78, 0x28, 0x04, 0x17, 0x96, 0xa5, 0x31, 0xc8, 0x63, 0x18,
-	0xea, 0x43, 0x18, 0xa3, 0xa4, 0x82, 0xe5, 0x8a, 0xf1, 0x35, 0xcf, 0x1d, 0xed, 0x78, 0x75, 0x8d,
-	0x93, 0x3d, 0x68, 0x5f, 0xf2, 0x78, 0xa5, 0x49, 0xf6, 0x67, 0x7d, 0xa3, 0xe9, 0xe1, 0x0b, 0x1e,
-	0xaf, 0xe6, 0xda, 0x31, 0xfd, 0xea, 0xc0, 0xe0, 0x4d, 0xb4, 0x54, 0x57, 0xb7, 0x92, 0xf7, 0x21,
-	0xc0, 0x42, 0x44, 0x99, 0x0a, 0xd5, 0x2a, 0x47, 0x5b, 0xd4, 0xd7, 0xc8, 0xc5, 0x2a, 0xc7, 0x52,
-	0x80, 0x56, 0x45, 0x80, 0x31, 0x78, 0x92, 0xf2, 0x1c, 0xad, 0x92, 0xc6, 0xd8, 0x94, 0xc1, 0xab,
-	0xc9, 0x60, 0x45, 0xeb, 0xac, 0x45, 0x9b, 0x7e, 0x73, 0x60, 0x74, 0xcc, 0x05, 0xb2, 0x45, 0x76,
-	0xfb, 0xbb, 0xd6, 0xfb, 0xec, 0x6e, 0xf7, 0x79, 0x0c, 0x5e, 0x5a, 0xb9, 0xb0, 0x31, 0x6e, 0xb8,
-	0xf1, 0x9a, 0x9b, 0xb7, 0xd5, 0xdc, 0x4e, 0x73, 0x73, 0xbb, 0xf5, 0xe6, 0xfe, 0x72, 0x60, 0x74,
-	0xc6, 0xa8, 0x5a, 0x0a, 0xbc, 0xeb, 0x81, 0xde, 0x83, 0x7e, 0x6e, 0x2a, 0x87, 0x4b, 0x91, 0x58,
-	0x62, 0x60, 0xa1, 0xb7, 0x22, 0xf9, 0xdb, 0x73, 0xfd, 0xc3, 0x81, 0xd1, 0xeb, 0xcf, 0xb9, 0x40,
-	0x29, 0xef, 0x9a, 0xfa, 0x06, 0xb3, 0x76, 0x8d, 0x99, 0x61, 0xe1, 0x95, 0x2c, 0x9a, 0x98, 0x6e,
-	0x35, 0xd5, 0xaf, 0x8e, 0x6a, 0x65, 0x55, 0xf4, 0x36, 0x56, 0xc5, 0xf4, 0x8b, 0x0b, 0x63, 0x4d,
-	0xf6, 0x1c, 0xd5, 0x3b, 0xce, 0x28, 0xfe, 0x13, 0x0b, 0xec, 0x3e, 0x74, 0x99, 0x0c, 0xdf, 0xb3,
-	0x04, 0x2d, 0xed, 0x0e, 0x93, 0xc7, 0x2c, 0x41, 0xb2, 0x03, 0xad, 0xa8, 0x1c, 0xe6, 0xe2, 0x58,
-	0x8a, 0xd1, 0xdd, 0x6a, 0x7b, 0xaf, 0xb9, 0xed, 0x7e, 0xad, 0xed, 0xb3, 0x9f, 0xae, 0xdd, 0xdd,
-	0xe7, 0x28, 0x3e, 0x31, 0x8a, 0xe4, 0x08, 0x3c, 0x6d, 0x93, 0x91, 0xdd, 0x44, 0xd5, 0x69, 0x98,
-	0x0c, 0x37, 0xc1, 0x62, 0x05, 0x3e, 0x87, 0x7b, 0x27, 0xa8, 0xec, 0xdb, 0x37, 0xf4, 0x27, 0x36,
-	0xaa, 0x61, 0x21, 0x34, 0xfd, 0x61, 0x06, 0xbd, 0x13, 0x54, 0x26, 0x75, 0x5d, 0xf5, 0x4f, 0x39,
-	0x4f, 0x61, 0x50, 0x7d, 0xa8, 0x65, 0xc9, 0x86, 0xd7, 0x7b, 0x43, 0x7a, 0x75, 0xd8, 0xcb, 0xf4,
-	0x86, 0x17, 0xd0, 0x94, 0xfe, 0x0c, 0xfe, 0xdb, 0x98, 0x1b, 0xb2, 0x5b, 0x8d, 0xa9, 0x4d, 0x53,
-	0xc3, 0x0f, 0x2e, 0x3b, 0x1a, 0x79, 0xf2, 0x3b, 0x00, 0x00, 0xff, 0xff, 0x6d, 0x54, 0x12, 0x4e,
-	0x69, 0x07, 0x00, 0x00,
+	// 1749 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe4, 0x59, 0x4f, 0x6f, 0xdb, 0x46,
+	0x16, 0x07, 0x65, 0x4b, 0x96, 0x9e, 0xed, 0xc4, 0x1e, 0x2b, 0x31, 0x6d, 0xe7, 0x8f, 0xa3, 0xdd,
+	0x05, 0x02, 0x2c, 0x90, 0x60, 0xb3, 0x58, 0x64, 0x2f, 0x8b, 0x5d, 0x47, 0x76, 0x0c, 0x61, 0xe3,
+	0x44, 0x2b, 0x39, 0xde, 0xd3, 0x42, 0xa0, 0xc9, 0x89, 0x34, 0x08, 0xc9, 0x61, 0xc8, 0x91, 0x63,
+	0xe5, 0xb4, 0x05, 0x8a, 0x7e, 0x90, 0x7e, 0x89, 0x5e, 0x5a, 0xa0, 0x45, 0xbf, 0x40, 0x81, 0x02,
+	0x41, 0x0b, 0xf4, 0xd0, 0x5b, 0x81, 0x9e, 0xda, 0x4b, 0xd1, 0xde, 0x8a, 0xf9, 0x47, 0x0d, 0x45,
+	0x26, 0x0e, 0x62, 0x57, 0x48, 0xd2, 0x93, 0xf8, 0x7e, 0xf3, 0x66, 0xf8, 0x7e, 0xef, 0xcf, 0x70,
+	0xe6, 0x09, 0x96, 0xa3, 0x98, 0x32, 0x7a, 0x33, 0x8a, 0x49, 0xc8, 0x6e, 0x88, 0x67, 0x54, 0x16,
+	0x3f, 0xeb, 0x48, 0x8e, 0xb8, 0x34, 0x08, 0x68, 0x28, 0x87, 0x1a, 0xdf, 0x5b, 0xb0, 0xd0, 0xe6,
+	0xaa, 0x1d, 0xfc, 0x64, 0x88, 0x13, 0x86, 0x36, 0xa0, 0xe6, 0xfa, 0x04, 0x87, 0xac, 0x47, 0x3c,
+	0xdb, 0xda, 0xb4, 0xae, 0xd7, 0x3a, 0x55, 0x09, 0xb4, 0x3c, 0x74, 0x0d, 0x16, 0x1c, 0xd7, 0xc5,
+	0x49, 0xd2, 0x63, 0xf4, 0x31, 0x0e, 0xed, 0x92, 0x18, 0x9f, 0x97, 0xd8, 0x3e, 0x87, 0xb8, 0x4a,
+	0xe0, 0xb8, 0x03, 0x12, 0xe2, 0x9e, 0x4b, 0x3d, 0x6c, 0xcf, 0x48, 0x15, 0x85, 0x35, 0xa9, 0x87,
+	0x91, 0x0d, 0x73, 0x2e, 0x0d, 0x19, 0x0e, 0x99, 0x3d, 0x2b, 0x46, 0xb5, 0xc8, 0x5f, 0x4e, 0x63,
+	0xd2, 0x27, 0x21, 0x7f, 0x79, 0x59, 0xbe, 0x5c, 0x02, 0x2d, 0x0f, 0x21, 0x98, 0x4d, 0x48, 0x3f,
+	0xb4, 0x2b, 0x02, 0x17, 0xcf, 0xe8, 0x1c, 0x94, 0x88, 0x67, 0xcf, 0x09, 0xa4, 0x44, 0x3c, 0x74,
+	0x09, 0x6a, 0x8c, 0x04, 0x38, 0x61, 0x4e, 0x10, 0xd9, 0xd5, 0x4d, 0xeb, 0xfa, 0x4c, 0x67, 0x0c,
+	0x34, 0x22, 0x00, 0xc5, 0x35, 0xf2, 0x47, 0xa8, 0x0e, 0x65, 0x1c, 0xc7, 0x34, 0x56, 0x2c, 0xa5,
+	0x80, 0xfe, 0x0c, 0xcb, 0xe2, 0xa1, 0xe7, 0xe1, 0xc4, 0x8d, 0x49, 0xc4, 0x08, 0xd5, 0x3c, 0x97,
+	0xc4, 0xc0, 0xf6, 0x18, 0x47, 0x57, 0x61, 0xf6, 0x90, 0x7a, 0x23, 0x41, 0x72, 0xfe, 0xd6, 0xbc,
+	0xf4, 0xe9, 0x8d, 0x3b, 0xd4, 0x1b, 0x75, 0xc4, 0x40, 0xe3, 0x43, 0x0b, 0x16, 0x1e, 0x38, 0x43,
+	0x36, 0x78, 0x25, 0xf7, 0x5e, 0x06, 0xe8, 0xc7, 0x4e, 0xc8, 0x7a, 0x6c, 0x14, 0x61, 0xf5, 0xd2,
+	0x9a, 0x40, 0xf6, 0x47, 0x11, 0x4e, 0x1d, 0x30, 0x63, 0x38, 0xa0, 0x0e, 0xe5, 0xc4, 0xa5, 0x11,
+	0x56, 0x9e, 0x94, 0x42, 0xd6, 0x0d, 0xe5, 0x09, 0x37, 0x28, 0xa7, 0x55, 0xb4, 0xd3, 0x1a, 0x9f,
+	0x5b, 0xb0, 0x72, 0x97, 0xc6, 0x98, 0xf4, 0xc3, 0x57, 0xb7, 0x75, 0x32, 0xce, 0xa5, 0x7c, 0x9c,
+	0xeb, 0x50, 0x0e, 0x0c, 0x83, 0xa5, 0xf0, 0x02, 0x8b, 0x35, 0xb7, 0x72, 0x2e, 0xb8, 0x95, 0xe2,
+	0xe0, 0xce, 0x4d, 0x06, 0xf7, 0x67, 0x0b, 0x56, 0xda, 0xc4, 0x65, 0xc3, 0x18, 0x4f, 0x3b, 0xa1,
+	0xaf, 0xc2, 0x7c, 0x24, 0xdf, 0xdc, 0x1b, 0xc6, 0xbe, 0x22, 0x06, 0x0a, 0x7a, 0x18, 0xfb, 0xbf,
+	0x75, 0x5e, 0xff, 0x68, 0xc1, 0xca, 0xce, 0x71, 0x14, 0xe3, 0x24, 0x99, 0x36, 0xf5, 0x0c, 0xb3,
+	0xd9, 0x09, 0x66, 0x92, 0x45, 0x39, 0x65, 0x51, 0xc4, 0x34, 0x17, 0xd4, 0x9a, 0x99, 0xaa, 0xc6,
+	0x56, 0x51, 0xcd, 0x6c, 0x15, 0x8d, 0xff, 0x97, 0xa0, 0x2e, 0xc8, 0x76, 0x31, 0x3b, 0xa0, 0xc4,
+	0xc5, 0x6f, 0xc4, 0x06, 0xb6, 0x0a, 0x73, 0x24, 0xe9, 0x3d, 0x22, 0x3e, 0x56, 0xb4, 0x2b, 0x24,
+	0xb9, 0x4b, 0x7c, 0x8c, 0x96, 0x60, 0xc6, 0x49, 0x93, 0x99, 0x3f, 0xa6, 0xce, 0x98, 0xcb, 0x85,
+	0xbd, 0x5a, 0x1c, 0xf6, 0xda, 0x64, 0xd8, 0xbf, 0xb0, 0x60, 0x55, 0xb8, 0x60, 0x1b, 0xfb, 0x98,
+	0xe1, 0x69, 0x7b, 0x41, 0x51, 0x9a, 0xcd, 0x53, 0x7a, 0xfd, 0x22, 0xfe, 0xd4, 0x82, 0x35, 0x83,
+	0x92, 0x78, 0xc4, 0xf1, 0x14, 0x49, 0x69, 0x0a, 0xb3, 0x39, 0x0a, 0xe5, 0x62, 0x0a, 0x95, 0x49,
+	0x0a, 0x5f, 0x5b, 0x60, 0x0b, 0xbb, 0xb7, 0x3c, 0x4f, 0xfc, 0xee, 0xe1, 0x70, 0xf8, 0x46, 0x24,
+	0xe7, 0xe9, 0xc3, 0xf3, 0x9d, 0x05, 0x1b, 0xb2, 0xe8, 0x06, 0x43, 0xb6, 0x4d, 0x9f, 0x86, 0x1d,
+	0x3e, 0x10, 0x4f, 0x73, 0xc3, 0xf9, 0x03, 0x2c, 0xc6, 0x38, 0x89, 0x68, 0x98, 0x60, 0xf9, 0x99,
+	0x94, 0x24, 0x17, 0x34, 0x98, 0xf9, 0x52, 0xbe, 0x3e, 0xd3, 0x9f, 0xac, 0xf1, 0xf6, 0xd2, 0xa5,
+	0xc3, 0xd0, 0x7b, 0xd3, 0x28, 0xd6, 0xa1, 0x7c, 0xc4, 0x0b, 0x5e, 0x71, 0x94, 0xc2, 0x19, 0x7c,
+	0x4b, 0x3e, 0xb2, 0x60, 0x49, 0x10, 0x6f, 0x85, 0x8f, 0xe8, 0x5b, 0x55, 0x78, 0x1f, 0x5b, 0x70,
+	0x41, 0x58, 0xde, 0x74, 0x42, 0x17, 0xfb, 0x5b, 0xbe, 0xff, 0x56, 0x99, 0xff, 0x5c, 0x67, 0x5c,
+	0xd3, 0x09, 0xf1, 0x3d, 0x1a, 0x4e, 0x73, 0x2b, 0x5f, 0x83, 0x2a, 0x8d, 0x3d, 0x1c, 0x8f, 0x3f,
+	0xe2, 0x73, 0x42, 0x6e, 0x9d, 0xc5, 0x9e, 0xfe, 0x25, 0x3f, 0x98, 0xa9, 0x52, 0x6a, 0xb9, 0x34,
+	0x9c, 0x22, 0x2f, 0xfe, 0x39, 0x0e, 0xfa, 0xc6, 0xa1, 0xac, 0x42, 0x82, 0x3e, 0x3f, 0x90, 0x9d,
+	0x9e, 0xd5, 0x27, 0x16, 0x5c, 0x34, 0xbe, 0x54, 0x53, 0x26, 0x76, 0x7a, 0xfb, 0xbf, 0xd5, 0xe9,
+	0x76, 0x87, 0x85, 0xd3, 0x3e, 0x34, 0x4e, 0x69, 0x0f, 0x4f, 0x29, 0xee, 0x62, 0xf6, 0x80, 0xa7,
+	0xf3, 0xbb, 0x47, 0xf1, 0x17, 0x9d, 0x85, 0x5d, 0xcc, 0xda, 0xc3, 0x64, 0xf0, 0x30, 0xf6, 0xa7,
+	0x7b, 0x02, 0x74, 0x83, 0xf4, 0x04, 0xe8, 0x06, 0x1e, 0x47, 0x78, 0xb1, 0x49, 0x42, 0xfc, 0x11,
+	0x5d, 0x84, 0x4a, 0xc2, 0x1c, 0x36, 0x4c, 0x14, 0x27, 0x25, 0x9d, 0xc1, 0xf1, 0xf7, 0x1b, 0x0b,
+	0xd6, 0x33, 0xe1, 0xed, 0x8a, 0x95, 0xdf, 0x95, 0x6d, 0xf3, 0xbd, 0x12, 0x5c, 0xc9, 0xd0, 0x6b,
+	0x3b, 0x7d, 0x12, 0xf6, 0xef, 0x91, 0x64, 0x9a, 0xa5, 0x7a, 0x19, 0x20, 0x72, 0xfa, 0xb8, 0x47,
+	0x42, 0x0f, 0x1f, 0x2b, 0x92, 0x35, 0x8e, 0xb4, 0x38, 0xc0, 0x2d, 0x10, 0xc3, 0x09, 0x79, 0xa6,
+	0x4f, 0x22, 0x55, 0x0e, 0x74, 0xc9, 0xb3, 0xb3, 0x38, 0x8c, 0x7c, 0x66, 0x84, 0x58, 0xa6, 0xf9,
+	0xb4, 0x43, 0x7c, 0xfa, 0xef, 0xfa, 0x57, 0x95, 0xec, 0xe5, 0xbc, 0xa9, 0x4e, 0xe3, 0xeb, 0x50,
+	0xdd, 0xc3, 0xc1, 0x21, 0x8e, 0x5b, 0xdb, 0xda, 0x76, 0x2d, 0xa3, 0x06, 0x2c, 0x34, 0x87, 0x09,
+	0xa3, 0x01, 0x8e, 0xef, 0x3b, 0x81, 0x6e, 0xae, 0x64, 0x30, 0xb4, 0x09, 0xf3, 0x5a, 0x6e, 0x3f,
+	0xf5, 0xb4, 0xed, 0x06, 0xc4, 0xdf, 0xd0, 0xc5, 0xa1, 0xd7, 0x25, 0x4c, 0x6f, 0x3f, 0xa9, 0xcc,
+	0x67, 0x77, 0x07, 0x24, 0x8a, 0x70, 0xcc, 0x69, 0x2a, 0x32, 0x26, 0xc4, 0x6d, 0xb8, 0x47, 0xfb,
+	0x24, 0x61, 0xc4, 0x15, 0x2a, 0x32, 0x8a, 0x19, 0x8c, 0x33, 0x17, 0xa9, 0x29, 0x14, 0xd4, 0xe5,
+	0x3d, 0x05, 0xf8, 0x0a, 0xfb, 0x83, 0x78, 0xac, 0x20, 0x0b, 0x3b, 0x83, 0xf1, 0x15, 0xf6, 0x68,
+	0xc8, 0x06, 0x42, 0xa1, 0x26, 0x57, 0x48, 0x01, 0x7e, 0x97, 0x69, 0x3b, 0x23, 0xbe, 0x57, 0xda,
+	0x20, 0xfc, 0xaa, 0x45, 0x3e, 0xb2, 0x73, 0x1c, 0x89, 0x91, 0x79, 0x59, 0x79, 0x4a, 0xe4, 0xac,
+	0x5b, 0xc9, 0x7d, 0xca, 0xf8, 0xd9, 0x78, 0x41, 0x4c, 0x4a, 0x65, 0x1e, 0xcd, 0x26, 0x4d, 0x98,
+	0xbd, 0xb8, 0x69, 0x5d, 0xb7, 0x3a, 0xe2, 0x59, 0x70, 0x60, 0x03, 0x6e, 0x4e, 0xc2, 0xec, 0x73,
+	0x62, 0x60, 0x0c, 0xa0, 0xdb, 0x50, 0xed, 0x60, 0x17, 0x93, 0x23, 0x1c, 0xdb, 0xe7, 0x45, 0x97,
+	0x6f, 0x43, 0x75, 0xf9, 0xb2, 0x0d, 0x17, 0xa9, 0xd2, 0x49, 0x95, 0xd1, 0x5f, 0xa0, 0xc2, 0x9d,
+	0x8d, 0x63, 0x7b, 0x49, 0x4c, 0x5b, 0x2b, 0x98, 0x26, 0x15, 0x3a, 0x4a, 0x91, 0x5b, 0xd2, 0xe5,
+	0xb7, 0xa9, 0x6d, 0x87, 0x61, 0x7b, 0x59, 0xfa, 0x22, 0x05, 0x04, 0xe3, 0xd0, 0x13, 0x63, 0x48,
+	0x31, 0x96, 0x22, 0xdf, 0x62, 0xff, 0x8b, 0x49, 0x7f, 0xc0, 0xec, 0x15, 0x61, 0xbe, 0x92, 0xb8,
+	0x27, 0xfe, 0x33, 0x74, 0x42, 0x46, 0xd8, 0xc8, 0xae, 0x4b, 0x4f, 0x68, 0x99, 0xcf, 0x39, 0xa0,
+	0xfe, 0x30, 0xc0, 0xf6, 0x05, 0x39, 0x47, 0x4a, 0x1c, 0xef, 0xe0, 0xc0, 0x89, 0x1f, 0xdb, 0x17,
+	0xe5, 0x76, 0x2d, 0x25, 0xf4, 0x77, 0x80, 0x2d, 0xcf, 0xeb, 0xe2, 0xf8, 0x88, 0xfb, 0x75, 0x55,
+	0x50, 0xb2, 0xb3, 0x94, 0xc6, 0xe3, 0x1d, 0x43, 0x17, 0xfd, 0x0d, 0x6a, 0x4d, 0x1a, 0x04, 0xd4,
+	0xe3, 0x66, 0xd8, 0x62, 0xe2, 0x6a, 0x76, 0x62, 0x3a, 0xdc, 0x19, 0x6b, 0x8a, 0xe4, 0xc1, 0x41,
+	0xe4, 0x3b, 0x4c, 0x6c, 0x26, 0xf6, 0x9a, 0x4a, 0x1e, 0x03, 0x6b, 0x7c, 0x50, 0x82, 0x7a, 0x51,
+	0x18, 0xb8, 0xaf, 0x9a, 0x34, 0x88, 0x9c, 0x70, 0xa4, 0x4a, 0x4b, 0x8b, 0x3c, 0x03, 0x8c, 0x8a,
+	0x12, 0xcf, 0xfc, 0xa3, 0xb5, 0x8f, 0x7d, 0x55, 0x41, 0xfc, 0x91, 0x7b, 0x61, 0x8f, 0x1e, 0x12,
+	0x5f, 0xd7, 0x8d, 0x92, 0xb8, 0x47, 0xdb, 0x34, 0x61, 0x46, 0xc9, 0xa4, 0x32, 0x37, 0xb8, 0x1d,
+	0xd3, 0x23, 0x12, 0xba, 0x58, 0xbc, 0x41, 0xd5, 0x8b, 0x89, 0xf1, 0xf9, 0x4d, 0xc2, 0x46, 0x62,
+	0x5c, 0x96, 0x4b, 0x2a, 0xf3, 0x8a, 0xdc, 0x39, 0x8e, 0xb6, 0x62, 0xec, 0x88, 0x61, 0x59, 0x2c,
+	0x26, 0xc4, 0x59, 0x6d, 0x79, 0x1e, 0x67, 0xab, 0x2a, 0x45, 0x8b, 0x8d, 0xf7, 0x4b, 0x80, 0xf2,
+	0x89, 0xf5, 0xbb, 0x73, 0xc3, 0xff, 0x60, 0x39, 0x97, 0x8b, 0x29, 0x55, 0xcb, 0xa0, 0x5a, 0x87,
+	0xf2, 0x81, 0xe3, 0x0f, 0x35, 0x7f, 0x29, 0xa0, 0x2b, 0x00, 0x7a, 0xfb, 0x6c, 0x6d, 0x2b, 0x3f,
+	0x18, 0x48, 0xe3, 0x07, 0x0b, 0x96, 0x26, 0x53, 0x96, 0x17, 0xed, 0x2e, 0xa5, 0x5e, 0x62, 0xbc,
+	0x63, 0x0c, 0xa4, 0xa3, 0xcd, 0x71, 0x8b, 0x7c, 0x0c, 0xa0, 0x3f, 0xc2, 0xa2, 0x10, 0x9e, 0xe8,
+	0x2a, 0x9d, 0x11, 0x55, 0x9a, 0x05, 0xb9, 0x59, 0x02, 0x68, 0xc7, 0xbc, 0xf4, 0x66, 0x45, 0xb9,
+	0x1a, 0x08, 0xf7, 0x98, 0x90, 0xd4, 0x1e, 0x50, 0x16, 0x0a, 0x26, 0x94, 0x5a, 0xb1, 0x8d, 0x13,
+	0x57, 0x05, 0x64, 0x0c, 0xf0, 0x68, 0x08, 0xe1, 0x80, 0xfa, 0x22, 0x1a, 0x56, 0x27, 0x95, 0x6f,
+	0x3d, 0x9f, 0x57, 0x7f, 0x0f, 0x69, 0x6f, 0xde, 0x84, 0xb2, 0x90, 0xd1, 0x8a, 0xaa, 0x61, 0xf3,
+	0xee, 0xb0, 0xbe, 0x9c, 0x05, 0x23, 0x7f, 0x84, 0xfe, 0x05, 0xe7, 0x77, 0x31, 0x53, 0x7f, 0x2f,
+	0xc8, 0xcf, 0xee, 0xba, 0xd2, 0x2a, 0xf8, 0xcf, 0xa1, 0x68, 0x85, 0x5b, 0x50, 0xdd, 0xc5, 0x4c,
+	0x4e, 0xd5, 0x6f, 0x3d, 0x69, 0xce, 0x3f, 0x60, 0xc1, 0xfc, 0x2f, 0x20, 0x7d, 0x65, 0xc1, 0x1f,
+	0x04, 0x2f, 0x98, 0x6e, 0x96, 0x53, 0x3a, 0xbd, 0xa0, 0xc9, 0x5e, 0x34, 0xfd, 0x9f, 0xb0, 0x98,
+	0x69, 0x4d, 0xa3, 0x0d, 0x53, 0x67, 0xa2, 0x61, 0x5d, 0xb4, 0xc0, 0x8e, 0xea, 0xc1, 0x18, 0x8d,
+	0x5d, 0x74, 0xc5, 0x54, 0xcb, 0x77, 0x7c, 0x8b, 0x96, 0x69, 0x01, 0xca, 0x37, 0x53, 0xd1, 0x66,
+	0x7e, 0xa1, 0x6c, 0x9f, 0xb5, 0x68, 0xa9, 0x5d, 0x58, 0xce, 0x35, 0x35, 0xd1, 0x55, 0x53, 0xaf,
+	0xa0, 0xdd, 0x59, 0xb4, 0xd0, 0x9e, 0xee, 0xab, 0x65, 0x3b, 0x88, 0xa8, 0x91, 0x71, 0x51, 0x61,
+	0x7b, 0xf1, 0x04, 0x57, 0x8b, 0x36, 0x5d, 0xce, 0xd5, 0x66, 0xf3, 0xae, 0x68, 0x81, 0xdb, 0x50,
+	0x4b, 0xdb, 0x5d, 0x68, 0xd5, 0x1c, 0x37, 0x1a, 0x60, 0x45, 0x13, 0xb7, 0xe0, 0x5c, 0xb6, 0xdb,
+	0x84, 0x2e, 0x99, 0x4a, 0x93, 0x4d, 0xa8, 0x97, 0x19, 0xaf, 0x3b, 0x3e, 0x59, 0xe3, 0x27, 0xfa,
+	0x40, 0x2f, 0x4a, 0x73, 0xa3, 0xb3, 0x32, 0x4e, 0xf3, 0x7c, 0xbb, 0xa5, 0x68, 0x7a, 0x13, 0xce,
+	0x4f, 0xb4, 0x30, 0xd0, 0xe5, 0x7c, 0x72, 0x9c, 0xb0, 0x88, 0x26, 0xa1, 0xfb, 0x08, 0x59, 0x12,
+	0x13, 0xdd, 0x85, 0x97, 0x2d, 0xa0, 0xef, 0x39, 0xd9, 0x05, 0x26, 0xee, 0xee, 0x2f, 0xa3, 0x31,
+	0xbe, 0x03, 0x67, 0x69, 0xe4, 0xee, 0xc6, 0x45, 0x8b, 0xfc, 0x5b, 0x35, 0xa9, 0xb2, 0x97, 0x49,
+	0x74, 0xad, 0xc8, 0x96, 0xcc, 0x2d, 0xa4, 0x68, 0xb1, 0xae, 0xfa, 0x63, 0x26, 0x7f, 0x75, 0x43,
+	0x7f, 0x2a, 0x5a, 0x30, 0x77, 0xb5, 0x3b, 0xc1, 0x42, 0xe3, 0x2e, 0x94, 0xb3, 0x30, 0x7f, 0x4f,
+	0x2a, 0x58, 0xec, 0xb0, 0x22, 0x90, 0xbf, 0xfe, 0x1a, 0x00, 0x00, 0xff, 0xff, 0x27, 0x3b, 0xc0,
+	0x2e, 0x2e, 0x20, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -705,6 +2761,22 @@ type PrintServiceClient interface {
 	PicturePrint(ctx context.Context, in *PicturePrintRequest, opts ...grpc.CallOption) (*PrintReply, error)
 	ExpressPrint(ctx context.Context, in *ExpressPrintRequest, opts ...grpc.CallOption) (*PrintReply, error)
 	PrintSetVoice(ctx context.Context, in *PrintSetVoiceRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintDeleteVoice(ctx context.Context, in *PrintDeleteVoiceRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintDeletePrinter(ctx context.Context, in *PrintDeletePrinterRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintAddPrintMenu(ctx context.Context, in *PrintAddPrintMenuRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintShutDownRestart(ctx context.Context, in *PrintShutDownRestartRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintSetSound(ctx context.Context, in *PrintSetSoundRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintInfo(ctx context.Context, in *PrintInfoRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintCancelAll(ctx context.Context, in *PrintCancelAllRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintCaneLone(ctx context.Context, in *PrintCaneLoneRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintSetIcon(ctx context.Context, in *PrintSetIconRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintDeleteIcon(ctx context.Context, in *PrintDeleteIconRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintBtnPrint(ctx context.Context, in *PrintBtnPrintRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintGetOrder(ctx context.Context, in *PrintGetOrderRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintSetPushUrl(ctx context.Context, in *PrintSetPushUrlRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintGetOrderStatus(ctx context.Context, in *PrintGetOrderStatusRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintGetOrderPagingList(ctx context.Context, in *PrintGetOrderPagingListRequest, opts ...grpc.CallOption) (*PrintReply, error)
+	PrintGetPrintStatus(ctx context.Context, in *PrintGetPrintStatusRequest, opts ...grpc.CallOption) (*PrintReply, error)
 }
 
 type printServiceClient struct {
@@ -769,6 +2841,150 @@ func (c *printServiceClient) PrintSetVoice(ctx context.Context, in *PrintSetVoic
 	return out, nil
 }
 
+func (c *printServiceClient) PrintDeleteVoice(ctx context.Context, in *PrintDeleteVoiceRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintDeleteVoice", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintDeletePrinter(ctx context.Context, in *PrintDeletePrinterRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintDeletePrinter", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintAddPrintMenu(ctx context.Context, in *PrintAddPrintMenuRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintAddPrintMenu", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintShutDownRestart(ctx context.Context, in *PrintShutDownRestartRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintShutDownRestart", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintSetSound(ctx context.Context, in *PrintSetSoundRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintSetSound", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintInfo(ctx context.Context, in *PrintInfoRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintInfo", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintCancelAll(ctx context.Context, in *PrintCancelAllRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintCancelAll", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintCaneLone(ctx context.Context, in *PrintCaneLoneRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintCaneLone", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintSetIcon(ctx context.Context, in *PrintSetIconRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintSetIcon", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintDeleteIcon(ctx context.Context, in *PrintDeleteIconRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintDeleteIcon", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintBtnPrint(ctx context.Context, in *PrintBtnPrintRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintBtnPrint", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintGetOrder(ctx context.Context, in *PrintGetOrderRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintGetOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintSetPushUrl(ctx context.Context, in *PrintSetPushUrlRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintSetPushUrl", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintGetOrderStatus(ctx context.Context, in *PrintGetOrderStatusRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintGetOrderStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintGetOrderPagingList(ctx context.Context, in *PrintGetOrderPagingListRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintGetOrderPagingList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *printServiceClient) PrintGetPrintStatus(ctx context.Context, in *PrintGetPrintStatusRequest, opts ...grpc.CallOption) (*PrintReply, error) {
+	out := new(PrintReply)
+	err := c.cc.Invoke(ctx, "/proto.PrintService/PrintGetPrintStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PrintServiceServer is the server API for PrintService service.
 type PrintServiceServer interface {
 	Print(context.Context, *PrintRequest) (*PrintReply, error)
@@ -777,6 +2993,22 @@ type PrintServiceServer interface {
 	PicturePrint(context.Context, *PicturePrintRequest) (*PrintReply, error)
 	ExpressPrint(context.Context, *ExpressPrintRequest) (*PrintReply, error)
 	PrintSetVoice(context.Context, *PrintSetVoiceRequest) (*PrintReply, error)
+	PrintDeleteVoice(context.Context, *PrintDeleteVoiceRequest) (*PrintReply, error)
+	PrintDeletePrinter(context.Context, *PrintDeletePrinterRequest) (*PrintReply, error)
+	PrintAddPrintMenu(context.Context, *PrintAddPrintMenuRequest) (*PrintReply, error)
+	PrintShutDownRestart(context.Context, *PrintShutDownRestartRequest) (*PrintReply, error)
+	PrintSetSound(context.Context, *PrintSetSoundRequest) (*PrintReply, error)
+	PrintInfo(context.Context, *PrintInfoRequest) (*PrintReply, error)
+	PrintCancelAll(context.Context, *PrintCancelAllRequest) (*PrintReply, error)
+	PrintCaneLone(context.Context, *PrintCaneLoneRequest) (*PrintReply, error)
+	PrintSetIcon(context.Context, *PrintSetIconRequest) (*PrintReply, error)
+	PrintDeleteIcon(context.Context, *PrintDeleteIconRequest) (*PrintReply, error)
+	PrintBtnPrint(context.Context, *PrintBtnPrintRequest) (*PrintReply, error)
+	PrintGetOrder(context.Context, *PrintGetOrderRequest) (*PrintReply, error)
+	PrintSetPushUrl(context.Context, *PrintSetPushUrlRequest) (*PrintReply, error)
+	PrintGetOrderStatus(context.Context, *PrintGetOrderStatusRequest) (*PrintReply, error)
+	PrintGetOrderPagingList(context.Context, *PrintGetOrderPagingListRequest) (*PrintReply, error)
+	PrintGetPrintStatus(context.Context, *PrintGetPrintStatusRequest) (*PrintReply, error)
 }
 
 // UnimplementedPrintServiceServer can be embedded to have forward compatible implementations.
@@ -800,6 +3032,54 @@ func (*UnimplementedPrintServiceServer) ExpressPrint(ctx context.Context, req *E
 }
 func (*UnimplementedPrintServiceServer) PrintSetVoice(ctx context.Context, req *PrintSetVoiceRequest) (*PrintReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrintSetVoice not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintDeleteVoice(ctx context.Context, req *PrintDeleteVoiceRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintDeleteVoice not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintDeletePrinter(ctx context.Context, req *PrintDeletePrinterRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintDeletePrinter not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintAddPrintMenu(ctx context.Context, req *PrintAddPrintMenuRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintAddPrintMenu not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintShutDownRestart(ctx context.Context, req *PrintShutDownRestartRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintShutDownRestart not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintSetSound(ctx context.Context, req *PrintSetSoundRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintSetSound not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintInfo(ctx context.Context, req *PrintInfoRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintInfo not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintCancelAll(ctx context.Context, req *PrintCancelAllRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintCancelAll not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintCaneLone(ctx context.Context, req *PrintCaneLoneRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintCaneLone not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintSetIcon(ctx context.Context, req *PrintSetIconRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintSetIcon not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintDeleteIcon(ctx context.Context, req *PrintDeleteIconRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintDeleteIcon not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintBtnPrint(ctx context.Context, req *PrintBtnPrintRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintBtnPrint not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintGetOrder(ctx context.Context, req *PrintGetOrderRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintGetOrder not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintSetPushUrl(ctx context.Context, req *PrintSetPushUrlRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintSetPushUrl not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintGetOrderStatus(ctx context.Context, req *PrintGetOrderStatusRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintGetOrderStatus not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintGetOrderPagingList(ctx context.Context, req *PrintGetOrderPagingListRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintGetOrderPagingList not implemented")
+}
+func (*UnimplementedPrintServiceServer) PrintGetPrintStatus(ctx context.Context, req *PrintGetPrintStatusRequest) (*PrintReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrintGetPrintStatus not implemented")
 }
 
 func RegisterPrintServiceServer(s *grpc.Server, srv PrintServiceServer) {
@@ -914,6 +3194,294 @@ func _PrintService_PrintSetVoice_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PrintService_PrintDeleteVoice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintDeleteVoiceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintDeleteVoice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintDeleteVoice",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintDeleteVoice(ctx, req.(*PrintDeleteVoiceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintDeletePrinter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintDeletePrinterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintDeletePrinter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintDeletePrinter",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintDeletePrinter(ctx, req.(*PrintDeletePrinterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintAddPrintMenu_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintAddPrintMenuRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintAddPrintMenu(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintAddPrintMenu",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintAddPrintMenu(ctx, req.(*PrintAddPrintMenuRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintShutDownRestart_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintShutDownRestartRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintShutDownRestart(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintShutDownRestart",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintShutDownRestart(ctx, req.(*PrintShutDownRestartRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintSetSound_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintSetSoundRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintSetSound(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintSetSound",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintSetSound(ctx, req.(*PrintSetSoundRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintInfo(ctx, req.(*PrintInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintCancelAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintCancelAllRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintCancelAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintCancelAll",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintCancelAll(ctx, req.(*PrintCancelAllRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintCaneLone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintCaneLoneRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintCaneLone(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintCaneLone",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintCaneLone(ctx, req.(*PrintCaneLoneRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintSetIcon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintSetIconRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintSetIcon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintSetIcon",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintSetIcon(ctx, req.(*PrintSetIconRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintDeleteIcon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintDeleteIconRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintDeleteIcon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintDeleteIcon",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintDeleteIcon(ctx, req.(*PrintDeleteIconRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintBtnPrint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintBtnPrintRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintBtnPrint(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintBtnPrint",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintBtnPrint(ctx, req.(*PrintBtnPrintRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintGetOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintGetOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintGetOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintGetOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintGetOrder(ctx, req.(*PrintGetOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintSetPushUrl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintSetPushUrlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintSetPushUrl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintSetPushUrl",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintSetPushUrl(ctx, req.(*PrintSetPushUrlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintGetOrderStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintGetOrderStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintGetOrderStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintGetOrderStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintGetOrderStatus(ctx, req.(*PrintGetOrderStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintGetOrderPagingList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintGetOrderPagingListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintGetOrderPagingList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintGetOrderPagingList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintGetOrderPagingList(ctx, req.(*PrintGetOrderPagingListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PrintService_PrintGetPrintStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrintGetPrintStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PrintServiceServer).PrintGetPrintStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.PrintService/PrintGetPrintStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PrintServiceServer).PrintGetPrintStatus(ctx, req.(*PrintGetPrintStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _PrintService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "proto.PrintService",
 	HandlerType: (*PrintServiceServer)(nil),
@@ -941,6 +3509,70 @@ var _PrintService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "PrintSetVoice",
 			Handler:    _PrintService_PrintSetVoice_Handler,
+		},
+		{
+			MethodName: "PrintDeleteVoice",
+			Handler:    _PrintService_PrintDeleteVoice_Handler,
+		},
+		{
+			MethodName: "PrintDeletePrinter",
+			Handler:    _PrintService_PrintDeletePrinter_Handler,
+		},
+		{
+			MethodName: "PrintAddPrintMenu",
+			Handler:    _PrintService_PrintAddPrintMenu_Handler,
+		},
+		{
+			MethodName: "PrintShutDownRestart",
+			Handler:    _PrintService_PrintShutDownRestart_Handler,
+		},
+		{
+			MethodName: "PrintSetSound",
+			Handler:    _PrintService_PrintSetSound_Handler,
+		},
+		{
+			MethodName: "PrintInfo",
+			Handler:    _PrintService_PrintInfo_Handler,
+		},
+		{
+			MethodName: "PrintCancelAll",
+			Handler:    _PrintService_PrintCancelAll_Handler,
+		},
+		{
+			MethodName: "PrintCaneLone",
+			Handler:    _PrintService_PrintCaneLone_Handler,
+		},
+		{
+			MethodName: "PrintSetIcon",
+			Handler:    _PrintService_PrintSetIcon_Handler,
+		},
+		{
+			MethodName: "PrintDeleteIcon",
+			Handler:    _PrintService_PrintDeleteIcon_Handler,
+		},
+		{
+			MethodName: "PrintBtnPrint",
+			Handler:    _PrintService_PrintBtnPrint_Handler,
+		},
+		{
+			MethodName: "PrintGetOrder",
+			Handler:    _PrintService_PrintGetOrder_Handler,
+		},
+		{
+			MethodName: "PrintSetPushUrl",
+			Handler:    _PrintService_PrintSetPushUrl_Handler,
+		},
+		{
+			MethodName: "PrintGetOrderStatus",
+			Handler:    _PrintService_PrintGetOrderStatus_Handler,
+		},
+		{
+			MethodName: "PrintGetOrderPagingList",
+			Handler:    _PrintService_PrintGetOrderPagingList_Handler,
+		},
+		{
+			MethodName: "PrintGetPrintStatus",
+			Handler:    _PrintService_PrintGetPrintStatus_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -11,6 +11,22 @@ service PrintService{
   rpc PicturePrint(PicturePrintRequest)returns(PrintReply);
   rpc ExpressPrint(ExpressPrintRequest)returns(PrintReply);
   rpc PrintSetVoice(PrintSetVoiceRequest)returns(PrintReply);
+  rpc PrintDeleteVoice(PrintDeleteVoiceRequest)returns(PrintReply);
+  rpc PrintDeletePrinter(PrintDeletePrinterRequest)returns(PrintReply);
+  rpc PrintAddPrintMenu(PrintAddPrintMenuRequest)returns(PrintReply);
+  rpc PrintShutDownRestart(PrintShutDownRestartRequest)returns(PrintReply);
+  rpc PrintSetSound(PrintSetSoundRequest)returns(PrintReply);
+  rpc PrintInfo(PrintInfoRequest)returns(PrintReply);
+  rpc PrintCancelAll(PrintCancelAllRequest)returns(PrintReply);
+  rpc PrintCaneLone(PrintCaneLoneRequest)returns(PrintReply);
+  rpc PrintSetIcon(PrintSetIconRequest)returns(PrintReply);
+  rpc PrintDeleteIcon(PrintDeleteIconRequest)returns(PrintReply);
+  rpc PrintBtnPrint(PrintBtnPrintRequest)returns(PrintReply);
+  rpc PrintGetOrder(PrintGetOrderRequest)returns(PrintReply);
+  rpc PrintSetPushUrl(PrintSetPushUrlRequest)returns(PrintReply);
+  rpc PrintGetOrderStatus(PrintGetOrderStatusRequest)returns(PrintReply);
+  rpc PrintGetOrderPagingList(PrintGetOrderPagingListRequest)returns(PrintReply);
+  rpc PrintGetPrintStatus(PrintGetPrintStatusRequest)returns(PrintReply);
 }
 
 message PrintRequest{
@@ -81,5 +97,231 @@ message PrintSetVoiceRequest{
   string sign = 7;
   string id = 8;
   int64 timestamp = 9;
+}
 
+message PrintDeleteVoiceRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string aid = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintDeletePrinterRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string sign = 4;
+  string id = 5;
+  int64 timestamp = 6;
+}
+
+message PrintAddPrintMenuRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string content = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintShutDownRestartRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string response_type = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintSetSoundRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string response_type = 4;
+  string voice = 5;
+  string sign = 6;
+  string id = 7;
+  int64 timestamp = 8;
+}
+
+message PrintInfoRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string sign = 4;
+  string id = 5;
+  int64 timestamp = 6;
+}
+
+message PrintCancelAllRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string sign = 4;
+  string id = 5;
+  int64 timestamp = 6;
+}
+
+message PrintCaneLoneRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string order_id = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintSetIconRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string img_url = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintDeleteIconRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintBtnPrintRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string response_type = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintGetOrderRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string response_type = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintSetPushUrlRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string cmd = 4;
+  string url = 5;
+  string status = 6;
+  string sign = 7;
+  string id = 8;
+  int64 timestamp = 9;
+}
+
+message PrintGetOrderStatusRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string order_id = 4;
+  string sign = 5;
+  string id = 6;
+  int64 timestamp = 7;
+}
+
+message PrintGetOrderPagingListRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string page_index = 4;
+  string page_size = 5;
+  string sign = 6;
+  string id = 7;
+  int64 timestamp = 8;
+}
+
+message PrintGetPrintStatusRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string machine_code = 3;
+  string sign = 4;
+  string id = 5;
+  int64 timestamp = 6;
+}
+
+message ExpressPrintContent{
+  string MemberID = 1;
+  string CustomerName = 2;
+  string CustomerPwd = 3;
+  string SendSite = 4;
+  string ShipperCode = 5;
+  string LogisticCode = 6;
+  string OrderCode = 7;
+  string ThrOrderCode = 8;
+  string MonthCode = 9;
+  int64 PayType = 10;
+  string ExpType = 11;
+  int64 IsNotice = 12;
+  double Cost = 13;
+  double OtherCost = 14;
+  ExpressPrintReceiver Receiver = 15;
+  ExpressPrintSender Sender = 16;
+  string StartDate = 17;
+  string EndDate = 18;
+  double Weight = 19;
+  int64 Quantity = 20;
+  double Volume = 21;
+  string Remark = 22;
+  ExpressAddService AddService = 23;
+  ExpressCommodity Commodity = 24;
+  string TemplateSize = 25;
+}
+
+message ExpressPrintReceiver{
+  string Company = 1;
+  string Name = 2;
+  string Tel = 3;
+  string Mobile = 4;
+  string PostCode = 5;
+  string ProvinceName = 6;
+  string CityName = 7;
+  string ExpAreaName = 8;
+  string Address = 9;
+}
+
+message ExpressPrintSender{
+  string Company = 1;
+  string Name = 2;
+  string Tel = 3;
+  string Mobile = 4;
+  string PostCode = 5;
+  string ProvinceName = 6;
+  string CityName = 7;
+  string ExpAreaName = 8;
+  string Address = 9;
+}
+
+message ExpressAddService{
+  string Name = 1;
+  string Value = 2;
+  string CustomerID = 3;
+}
+
+message ExpressCommodity{
+  string GoodsName = 1;
+  string GoodsCode = 2;
+  int64 Goodsquantity = 3;
+  double GoodsPrice = 4;
+  double GoodsWeight = 5;
+  string GoodsDesc = 6;
+  double GoodsVol = 7;
 }

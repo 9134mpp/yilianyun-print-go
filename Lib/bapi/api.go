@@ -92,6 +92,48 @@ func (a *API) GetForeignToken(ctx context.Context, r *pd.ForeignOauthRequest) ([
 	return body, nil
 
 }
+// 设置内置语音
+func(a *API) PrintSetVoice(ctx context.Context, r *pd.PrintSetVoiceRequest)([]byte, error){
+	data := make(url.Values)
+
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+	data["client_id"] = []string{setting.ClientSetting.ClientId}
+	data["access_token"] = []string{r.AccessToken}
+	data["machine_code"] = []string{r.MachineCode}
+	data["content"] = []string{r.Content}
+	data["is_file"] = []string{r.IsFile}
+	data["aid"] = []string{r.Aid}
+	data["sign"] = []string{common.GetSign(timestamp)}
+	data["id"] = []string{common.GetUUID4()}
+	data["timestamp"] = []string{timestamp}
+
+	body, err := a.httpPost("printer/setvoice", data)
+	if err != nil {
+		return nil, err
+	}
+	return body, nil
+}
+
+// 面单接口
+func(a *API) ExpressPrint(ctx context.Context, r *pd.ExpressPrintRequest)([]byte, error){
+	data := make(url.Values)
+
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+	data["client_id"] = []string{setting.ClientSetting.ClientId}
+	data["access_token"] = []string{r.AccessToken}
+	data["machine_code"] = []string{r.MachineCode}
+	data["origin_id"] = []string{common.GetOrderId()}
+	data["id"] = []string{common.GetUUID4()}
+	data["sign"] = []string{common.GetSign(timestamp)}
+	data["timestamp"] = []string{timestamp}
+	data["content"] = []string{r.Content}
+
+	body, err := a.httpPost("expressprint/index", data)
+	if err != nil {
+		return nil, err
+	}
+	return body, nil
+}
 
 func (a *API) httpGet(path string) ([]byte, error) {
 	resp, err := http.Get(fmt.Sprintf("%s/%s", a.URL, path))
