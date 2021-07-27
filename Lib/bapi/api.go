@@ -8,11 +8,11 @@ import (
 	"net/url"
 	"strconv"
 	"time"
-	"yilianyun-print-go/Lib/pkg/common"
+	"yilianyun-print-go/Lib/common"
 
-	"yilianyun-print-go/Lib/pkg/setting"
+	"yilianyun-print-go/Lib/setting"
 
-	pd "yilianyun-print-go/Lib/pkg/proto"
+	pd "yilianyun-print-go/Lib/proto"
 )
 
 type API struct {

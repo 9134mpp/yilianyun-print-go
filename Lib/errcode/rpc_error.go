@@ -3,7 +3,7 @@ package errcode
 import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	pd "yilianyun-print-go/Lib/pkg/proto"
+	pd "yilianyun-print-go/Lib/proto"
 )
 
 func TogRPCError(err *Error) error {

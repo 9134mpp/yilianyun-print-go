@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
-	"yilianyun-print-go/Lib/pkg/setting"
+	"yilianyun-print-go/Lib/setting"
 )
 
 var (

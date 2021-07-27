@@ -9,7 +9,7 @@ type Error struct {
 
 var _code = map[int]string{}
 
-func NewError(code int, msg string) *Error{
+func NewError(code int, msg string) *Error {
 	if _, ok := _code[code];ok {
 		panic(fmt.Sprintf("错误码 %d 已经存在，请更换一个", code))
 	}

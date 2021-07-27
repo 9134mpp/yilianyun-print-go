@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 	"yilianyun-print-go/Demo/client/Lib/Api"
-	pd "yilianyun-print-go/Lib/pkg/proto"
-	"yilianyun-print-go/Lib/pkg/setting"
+	pd "yilianyun-print-go/Lib/proto"
+	"yilianyun-print-go/Lib/setting"
 )
 
 

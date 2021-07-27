@@ -6,10 +6,10 @@ import (
 	"google.golang.org/grpc/reflection"
 	"net"
 	"net/http"
-	"yilianyun-print-go/Lib/pkg/common"
-	pd "yilianyun-print-go/Lib/pkg/proto"
-	"yilianyun-print-go/Lib/pkg/setting"
+	"yilianyun-print-go/Lib/common"
+	pd "yilianyun-print-go/Lib/proto"
 	"yilianyun-print-go/Lib/server"
+	"yilianyun-print-go/Lib/setting"
 
 	"log"
 )
@@ -18,9 +18,9 @@ var grpcPort string
 var httpPort string
 
 func init (){
-	setting.Setup()  //初始化配置
-	common.Setup() //初始化常用方法配置
-	server.Setup() //初始化Api配置
+	setting.Setup() //初始化配置
+	common.Setup()  //初始化常用方法配置
+	server.Setup()  //初始化Api配置
 	flag.StringVar(&grpcPort, "grpc_port", "9523", "gRPC 启动端口号")
 	flag.StringVar(&httpPort, "http_port", "9001", "HTTP 启动端口号")
 	flag.Parse()

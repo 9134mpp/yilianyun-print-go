@@ -4,11 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"log"
-	"yilianyun-print-go/Lib/pkg/bapi"
-	"yilianyun-print-go/Lib/pkg/errcode"
-	pd "yilianyun-print-go/Lib/pkg/proto"
-	"yilianyun-print-go/Lib/pkg/setting"
-
+	"yilianyun-print-go/Lib/bapi"
+	"yilianyun-print-go/Lib/errcode"
+	pd "yilianyun-print-go/Lib/proto"
+	"yilianyun-print-go/Lib/setting"
 )
 
 var ApiUrl string

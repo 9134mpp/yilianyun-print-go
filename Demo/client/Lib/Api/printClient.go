@@ -4,7 +4,7 @@ import (
 	"context"
 	"google.golang.org/grpc"
 	"log"
-	pd "yilianyun-print-go/Lib/pkg/proto"
+	pd "yilianyun-print-go/Lib/proto"
 )
 
 type PrintParam struct {
