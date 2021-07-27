@@ -32,7 +32,7 @@ func have() {
 	//打印
 	p := &pd.PrintRequest{
 		AccessToken: setting.ClientSetting.AccessToken,
-		MachineCode: "4004628158",
+		MachineCode: "4004628156",
 		Content:     content(),
 	}
 	_ = Api.Print(Client, p)
@@ -78,8 +78,8 @@ func foreign(){
 	// 这里示范个人推荐的授权模式 (极速授权模式：http://doc2.10ss.net/343932)
 	//授权
 	pam := &pd.ForeignOauthRequest{
-		MachineCode: "4004628158",
-		Msign: "147054763171",
+		MachineCode: "4004628156",
+		Msign: "14757845145",
 	}
 	token, _ := Api.GetForeignToken(Client, pam) // 这里token存在数据库或者缓存中即可
 	fmt.Println(token)
