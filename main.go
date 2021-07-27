@@ -19,7 +19,8 @@ var httpPort string
 
 func init (){
 	setting.Setup()  //初始化配置
-	common.Setup() //初始化常用方法
+	common.Setup() //初始化常用方法配置
+	server.Setup() //初始化Api配置
 	flag.StringVar(&grpcPort, "grpc_port", "9523", "gRPC 启动端口号")
 	flag.StringVar(&httpPort, "http_port", "9001", "HTTP 启动端口号")
 	flag.Parse()

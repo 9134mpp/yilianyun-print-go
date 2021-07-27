@@ -35,9 +35,9 @@ func NewAPI(url string) *API {
 	return &API{URL: url}
 }
 
-func(a *API)GetToken(ctx context.Context, r *pd.OauthRequest)([]byte, error){
+func (a *API) GetToken(ctx context.Context, r *pd.OauthRequest) ([]byte, error) {
 	data := make(url.Values)
-	timestamp := strconv.FormatInt(time.Now().Unix(),10)
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["scope"] = []string{"all"}
@@ -46,15 +46,16 @@ func(a *API)GetToken(ctx context.Context, r *pd.OauthRequest)([]byte, error){
 	data["grant_type"] = []string{"client_credentials"}
 	body, err := a.httpPost("oauth/oauth", data)
 	if err != nil {
-		return nil , err
+		return nil, err
 	}
 	return body, nil
 }
 
 // 文本打印接口
-func (a *API) Print(ctx context.Context, r *pd.PrintRequest)([]byte, error){
+func (a *API) Print(ctx context.Context, r *pd.PrintRequest) ([]byte, error) {
 	data := make(url.Values)
-	timestamp := strconv.FormatInt(time.Now().Unix(),10)
+
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
 	data["access_token"] = []string{r.AccessToken}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -63,16 +64,37 @@ func (a *API) Print(ctx context.Context, r *pd.PrintRequest)([]byte, error){
 	data["origin_id"] = []string{common.GetOrderId()}
 	data["timestamp"] = []string{timestamp}
 	data["id"] = []string{common.GetUUID4()}
-	body, err := a.httpPost("print/index",data)
+	body, err := a.httpPost("print/index", data)
 
 	if err != nil {
-		return nil , err
+		return nil, err
 	}
 	return body, nil
 }
 
-func(a *API)httpGet(path string)([]byte, error){
-	resp, err := http.Get(fmt.Sprintf("%s/%s",a.URL, path))
+// 授权开放应用token
+func (a *API) GetForeignToken(ctx context.Context, r *pd.ForeignOauthRequest) ([]byte, error) {
+	data := make(url.Values)
+
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+	data["client_id"] = []string{setting.ClientSetting.ClientId}
+	data["machine_code"] = []string{r.MachineCode}
+	data["msign"] = []string{r.Msign}
+	data["scope"] = []string{"all"}
+	data["sign"] = []string{common.GetSign(timestamp)}
+	data["id"] = []string{common.GetUUID4()}
+	data["timestamp"] = []string{timestamp}
+
+	body, err := a.httpPost("oauth/scancodemodel", data)
+	if err != nil {
+		return nil, err
+	}
+	return body, nil
+
+}
+
+func (a *API) httpGet(path string) ([]byte, error) {
+	resp, err := http.Get(fmt.Sprintf("%s/%s", a.URL, path))
 	if err != nil {
 		return nil, err
 	}
@@ -81,13 +103,12 @@ func(a *API)httpGet(path string)([]byte, error){
 	return body, nil
 }
 
-func(a *API)httpPost(path string, data url.Values)([]byte, error){
-	resp, err := http.PostForm(fmt.Sprintf("%s/%s",a.URL, path), data)
+func (a *API) httpPost(path string, data url.Values) ([]byte, error) {
+	resp, err := http.PostForm(fmt.Sprintf("%s/%s", a.URL, path), data)
 	if err != nil {
 		return nil, err
 	}
 	defer resp.Body.Close()
-	body,_ := ioutil.ReadAll(resp.Body)
+	body, _ := ioutil.ReadAll(resp.Body)
 	return body, nil
 }
-

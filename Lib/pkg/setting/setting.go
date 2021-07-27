@@ -11,11 +11,17 @@ var (
 
 var ClientSetting = &Client{}
 
-
 type Client struct {
 	ClientId string
 	ClientServer string
 	AccessToken string
+}
+
+
+var ApiSetting = &Api{}
+
+type Api struct {
+	Url string
 }
 
 
@@ -28,6 +34,10 @@ func Setup(){
 	err = Cfg.Section("Client").MapTo(ClientSetting)
 	if err!= nil  {
 		log.Fatalf("Cfg.MapTo ClientSetting err: %v", err)
+	}
+	err = Cfg.Section("Api").MapTo(ApiSetting)
+	if err != nil {
+		log.Fatalf("Cfg.MapTo ApiSetting err: %v", err)
 	}
 }
 

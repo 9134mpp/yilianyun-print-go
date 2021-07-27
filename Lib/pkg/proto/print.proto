@@ -6,7 +6,7 @@ import "proto/common.proto";
 
 service PrintService{
   rpc Print(PrintRequest)returns(PrintReply);
-  rpc GetOpenToken(OpenOauthRequest)returns(PrintReply);
+  rpc GetForeignToken(ForeignOauthRequest)returns(PrintReply);
   rpc GetToken(OauthRequest)returns(PrintReply);
   rpc PicturePrint(PicturePrintRequest)returns(PrintReply);
   rpc ExpressPrint(ExpressPrintRequest)returns(PrintReply);
@@ -39,7 +39,7 @@ message OauthRequest{
   string id = 6;
 }
 
-message OpenOauthRequest{
+message ForeignOauthRequest{
   string client_id = 1;
   string machine_code = 2;
   string msign = 3;
