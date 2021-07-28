@@ -131,5 +131,3 @@ func foreign(){
 
 
 ```
-
-易联云Go SDK
