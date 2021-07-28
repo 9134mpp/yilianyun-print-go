@@ -85,6 +85,7 @@ message ExpressPrintRequest{
   string sign = 6;
   string timestamp = 7;
   string content = 8;
+  string sandbox = 9;
 }
 
 message PrintSetVoiceRequest{
