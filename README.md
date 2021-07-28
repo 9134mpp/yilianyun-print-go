@@ -11,6 +11,10 @@ Golang >= 1.16
 git clone https://github.com/9134mpp/yilianyun-print-go.git
 ```
 
+如果下载过慢
+```shell
+git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
+```
 
 # Usage
   1. 接口类Lib/bapi/api.go，集成了所有的易联云接口
