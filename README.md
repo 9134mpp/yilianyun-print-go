@@ -23,7 +23,9 @@ git clone https://github.com/9134mpp/yilianyun-print-go.git
   8. Demo/Client client端调用测试demo
   8. 若有什么问题，欢迎来提个issues， 谢谢大家！
  
- 首先运行 根目录下的main.go 
+ 首先运行 根目录下的main.go 启动grpc server端服务 在参考 Demo/Client/main.go代码
+ 
+# 示范代码 
 ```go 
 package main
 
