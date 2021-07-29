@@ -30,7 +30,7 @@ func have() {
 	//打印
 	p := &pd.PrintRequest{
 		AccessToken: token,
-		MachineCode: "4004628156",
+		MachineCode: "",
 		Content:     content(),
 	}
 	_ = Api.Print(Client, p)
