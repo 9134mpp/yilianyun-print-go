@@ -43,7 +43,7 @@ message PrintRequest{
 message PrintReply{
   string error = 1;
   string error_description = 2;
-  repeated Body body = 3;
+  Body body = 3;
 }
 
 

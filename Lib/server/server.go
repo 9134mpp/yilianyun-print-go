@@ -325,7 +325,8 @@ func (p *PrintServer) GetToken(ctx context.Context, r *pd.OauthRequest) (*pd.Pri
 	if printReply.Error != success{
 		return &printReply, nil
 	}
-	setting.Update("Client", "AccessToken", printReply.Body[0].AccessToken) //修改配置文件中的access_token
+	setting.Update("Client", "AccessToken", printReply.Body.AccessToken) //修改配置文件中的access_token
+	setting.Setup() // 重新初始化配置
 	return &printReply, nil
 }
 
@@ -338,7 +339,7 @@ func (p *PrintServer) Print(ctx context.Context, r *pd.PrintRequest) (*pd.PrintR
 	printReply := pd.PrintReply{}
 	err = json.Unmarshal(body, &printReply)
 	if err != nil {
-		return nil, errcode.TogRPCError(errcode.NewError(10000009, err.Error()))
+		return nil, errcode.TogRPCError(errcode.Fail)
 	}
 
 	return &printReply, nil

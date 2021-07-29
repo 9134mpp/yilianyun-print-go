@@ -6,7 +6,6 @@ import (
 	"strings"
 	"yilianyun-print-go/Demo/client/Lib/Api"
 	pd "yilianyun-print-go/Lib/proto"
-	"yilianyun-print-go/Lib/setting"
 )
 
 
@@ -27,10 +26,10 @@ func main() {
 func have() {
 	//授权
 	token, _ := Api.GetToken(Client, &pd.OauthRequest{}) // 自有应用access_token有效期时间永久获取后记得保存，不要频繁获取！！！ 不要频繁获取！！！ 不要频繁获取！！！
-	fmt.Println(token)
+	fmt.Printf("token:%s\n",token)
 	//打印
 	p := &pd.PrintRequest{
-		AccessToken: setting.ClientSetting.AccessToken,
+		AccessToken: token,
 		MachineCode: "4004628156",
 		Content:     content(),
 	}

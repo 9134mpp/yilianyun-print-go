@@ -34,7 +34,7 @@ func GetToken(client pd.PrintServiceClient, p *pd.OauthRequest) (string, error) 
 		return "", nil
 	}
 	log.Printf("client.GetToken resp: %+v", resp)
-	return resp.GetBody()[0].AccessToken, nil
+	return resp.GetBody().AccessToken, nil
 
 }
 // 开放应用获取token
