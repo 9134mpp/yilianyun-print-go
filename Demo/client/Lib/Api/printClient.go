@@ -34,7 +34,7 @@ func GetToken(client pd.PrintServiceClient, p *pd.OauthRequest) (string, error) 
 		return "", nil
 	}
 	log.Printf("client.GetToken resp: %+v", resp)
-	return resp.Body.AccessToken, nil
+	return resp.GetBody()[0].AccessToken, nil
 
 }
 // 开放应用获取token
@@ -46,7 +46,7 @@ func GetForeignToken(client pd.PrintServiceClient, p *pd.ForeignOauthRequest)(st
 		return "", nil
 	}
 	log.Printf("client.GetForeignToken resp: %+v", resp)
-	return resp.Body.AccessToken, nil
+	return "", nil
 }
 
 func GetClientConn(ctx context.Context, target string, opts []grpc.DialOption) (*grpc.ClientConn, error) {

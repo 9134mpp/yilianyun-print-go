@@ -43,8 +43,9 @@ message PrintRequest{
 message PrintReply{
   string error = 1;
   string error_description = 2;
-  Body body = 3;
+  repeated Body body = 3;
 }
+
 
 message OauthRequest{
   string client_id = 1;

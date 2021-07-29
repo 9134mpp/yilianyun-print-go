@@ -305,6 +305,11 @@ func NewPrintServer() *PrintServer {
 	return &PrintServer{}
 }
 
+type PrintErrorReply struct {
+	Error  string `json:"error"`
+	ErrorDescription string `json:"error_description"`
+
+}
 func (p *PrintServer) GetToken(ctx context.Context, r *pd.OauthRequest) (*pd.PrintReply, error) {
 	api := bapi.NewAPI(ApiUrl)
 	body, err := api.GetToken(ctx, r)
@@ -318,8 +323,9 @@ func (p *PrintServer) GetToken(ctx context.Context, r *pd.OauthRequest) (*pd.Pri
 	}
 	success := "0"
 	if printReply.Error != success{
-		setting.Update("Client", "AccessToken", printReply.Body.AccessToken) //修改配置文件中的access_token
+		return &printReply, nil
 	}
+	setting.Update("Client", "AccessToken", printReply.Body[0].AccessToken) //修改配置文件中的access_token
 	return &printReply, nil
 }
 

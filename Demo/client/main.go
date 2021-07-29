@@ -28,7 +28,6 @@ func have() {
 	//授权
 	token, _ := Api.GetToken(Client, &pd.OauthRequest{}) // 自有应用access_token有效期时间永久获取后记得保存，不要频繁获取！！！ 不要频繁获取！！！ 不要频繁获取！！！
 	fmt.Println(token)
-
 	//打印
 	p := &pd.PrintRequest{
 		AccessToken: setting.ClientSetting.AccessToken,
