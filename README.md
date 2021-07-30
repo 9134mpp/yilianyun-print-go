@@ -27,7 +27,15 @@ git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
   8. Demo/Client client端调用测试demo
   8. 若有什么问题，欢迎来提个issues， 谢谢大家！
  
- 首先运行 根目录下的main.go 
+ 首先运行 根目录下的main.go
+   ```shell script
+  go run main.go grpc_port=9523
+  ```
+更多详情运行
+```shell script
+go run main.go -help
+````
+然后运行Demo/client 开始测试
   ```shell script
  go run main.go -url=localhost -port=9523
  ```
