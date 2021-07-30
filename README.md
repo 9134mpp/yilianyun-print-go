@@ -16,7 +16,7 @@ git clone https://github.com/9134mpp/yilianyun-print-go.git
 git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
 ```
 
-# 使用
+ # 目录介绍
   1. 接口类Lib/bapi/api.go，集成了所有的易联云接口
   2. 配置类Config/app.ini
   3. 公共方法Lib/common/common.go 有获取uuid,order_id, sign 等方法
@@ -27,6 +27,7 @@ git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
   8. Demo/Client client端调用测试demo
   8. 若有什么问题，欢迎来提个issues， 谢谢大家！
  
+ # 使用
  首先运行 根目录下的main.go
    ```shell script
   go run main.go grpc_port=9523
