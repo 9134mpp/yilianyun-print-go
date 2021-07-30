@@ -231,7 +231,7 @@ func PrintGetOrder(client pd.PrintServiceClient, p *pd.PrintGetOrderRequest) err
 
 // 设置推送url接口
 func PrintSetPushUrl(client pd.PrintServiceClient, p *pd.PrintSetPushUrlRequest) error {
-	resp, _ := client.PrintGetOrder(context.Background(), p)
+	resp, _ := client.PrintSetPushUrl(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
 		log.Printf("client.PrintSetPushUrl resp: %+v", resp.ErrorDescription)

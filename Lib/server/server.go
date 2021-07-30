@@ -326,7 +326,7 @@ func (p *PrintServer) GetToken(ctx context.Context, r *pd.OauthRequest) (*pd.Pri
 		return &printReply, nil
 	}
 	setting.Update("Client", "AccessToken", printReply.Body.AccessToken) //修改配置文件中的access_token
-	setting.Setup() // 重新初始化配置
+	_  = setting.Cfg.Reload()// 重新初始化配置
 	return &printReply, nil
 }
 

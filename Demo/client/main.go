@@ -2,18 +2,26 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"strings"
 	"yilianyun-print-go/Demo/client/Lib/Api"
 	pd "yilianyun-print-go/Lib/proto"
+	"yilianyun-print-go/Lib/setting"
 )
-
 
 var Client pd.PrintServiceClient
 
+var url string
+var port string
+func init() {
+	flag.StringVar(&url,"url", "localhost","rpcClient 启动地址(默认localhost)")
+	flag.StringVar(&port,"port", "9523","rpcClient 启动端口(默认9523端口)")
+	flag.Parse()
+}
 func main() {
 	ctx := context.Background()
-	clientConn, _ := Api.GetClientConn(ctx, "localhost:9523", nil)
+	clientConn, _ := Api.GetClientConn(ctx, fmt.Sprintf("%s:%s", setting.RpcServerSetting.Url, setting.RpcServerSetting.Port), nil)
 	defer clientConn.Close()
 	Client = pd.NewPrintServiceClient(clientConn)
 	// 自有应用示例子
@@ -26,7 +34,7 @@ func main() {
 func have() {
 	//授权
 	token, _ := Api.GetToken(Client, &pd.OauthRequest{}) // 自有应用access_token有效期时间永久获取后记得保存，不要频繁获取！！！ 不要频繁获取！！！ 不要频繁获取！！！
-	fmt.Printf("token:%s\n",token)
+	fmt.Printf("token:%s\n", token)
 	//打印
 	p := &pd.PrintRequest{
 		AccessToken: token,
@@ -64,20 +72,20 @@ func content() string {
 }
 
 func strRepeat(str string, multiplier int) string {
-	var s  []string
-	for i :=0 ;i < multiplier; i ++{
+	var s []string
+	for i := 0; i < multiplier; i++ {
 		s = append(s, str)
 	}
 	return fmt.Sprintf("%s", strings.Join(s, ""))
 }
 
 // 开放应用示例demo
-func foreign(){
+func foreign() {
 	// 这里示范个人推荐的授权模式 (极速授权模式：http://doc2.10ss.net/343932)
 	//授权
 	pam := &pd.ForeignOauthRequest{
 		MachineCode: "",
-		Msign: "",
+		Msign:       "",
 	}
 	token, _ := Api.GetForeignToken(Client, pam) // 这里token存在数据库或者缓存中即可
 	fmt.Println(token)
@@ -89,12 +97,3 @@ func foreign(){
 	}
 	_ = Api.Print(Client, p)
 }
-
-
-
-
-
-
-
-
-

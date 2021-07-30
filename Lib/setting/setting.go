@@ -1,8 +1,10 @@
 package setting
 
 import (
+	"fmt"
 	"gopkg.in/ini.v1"
 	"log"
+	"os"
 )
 
 var (
@@ -24,9 +26,16 @@ type Api struct {
 	Url string
 }
 
+var RpcServerSetting = &RpcServer{}
+
+type RpcServer struct {
+	Url string
+	Port string
+}
 
 func Setup(){
 	var err error
+	fmt.Println(os.Args[0])
 	Cfg, err = ini.Load("Config/app.ini")
 	if err != nil {
 		log.Fatalf("Fail to parse 'app.ini':%v", err)
@@ -38,6 +47,10 @@ func Setup(){
 	err = Cfg.Section("Api").MapTo(ApiSetting)
 	if err != nil {
 		log.Fatalf("Cfg.MapTo ApiSetting err: %v", err)
+	}
+	err = Cfg.Section("RpcServer").MapTo(RpcServerSetting)
+	if err != nil {
+		log.Fatalf("Cfg.MapTo RpcServerSetting err: %v", err)
 	}
 }
 
