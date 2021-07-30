@@ -17,15 +17,15 @@ git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
 ```
 
  # 目录介绍
-  1. 接口类Lib/bapi/api.go，集成了所有的易联云接口
-  2. 配置类Config/app.ini
+  1. server端的接口类Lib/bapi/api.go，集成了所有的易联云接口
+  2. server端的配置类Config/app.ini
   3. 公共方法Lib/common/common.go 有获取uuid,order_id, sign 等方法
-  4. 配置读取类Lib/setting/seeting.go 读取相关配置如client_id, client_server等配置
-  5. 错误返回目录Lib/errcode 返回grpc 错误的目录
+  4. server端配置读取类Lib/setting/setting.go 读取相关配置如client_id, client_server等配置
+  5. server端的错误返回目录Lib/errcode 返回grpc 错误的目录
   6. 目录Lib/Proto 定义Protobuf数据结构的目录
   7. 目录Lib/server grpc Server服务的目录 
   8. Demo/Client client端调用测试demo
-  9. Demo/Client/Lib/Api/printClient.go 有所有调用的接口示例
+  9. Demo/Client/Lib/Api/printClient.go 有所有client端的接口示例
   10. 若有什么问题，欢迎来提个issues， 谢谢大家！
 
  
