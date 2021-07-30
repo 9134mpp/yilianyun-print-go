@@ -25,7 +25,9 @@ git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
   6. 目录Lib/Proto 定义Protobuf数据结构的目录
   7. 目录Lib/server grpc Server服务的目录 
   8. Demo/Client client端调用测试demo
-  8. 若有什么问题，欢迎来提个issues， 谢谢大家！
+  9. Demo/Client/Lib/Api/printClient.go 有所有调用的接口示例
+  10. 若有什么问题，欢迎来提个issues， 谢谢大家！
+
  
  # 使用
  首先运行 根目录下的main.go
