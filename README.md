@@ -1,11 +1,11 @@
 <h1 align="center">yilianyun-print-sdk</h1>
 
-# Requirement
+# 版本
 
 ```
 Golang >= 1.16
 ```
-# Installation
+# 下载
 
 ```shell
 git clone https://github.com/9134mpp/yilianyun-print-go.git
@@ -16,7 +16,7 @@ git clone https://github.com/9134mpp/yilianyun-print-go.git
 git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
 ```
 
-# Usage
+# 使用
   1. 接口类Lib/bapi/api.go，集成了所有的易联云接口
   2. 配置类Config/app.ini
   3. 公共方法Lib/common/common.go 有获取uuid,order_id, sign 等方法
