@@ -20,6 +20,20 @@ func Setup(){
 }
 type PrintServer struct{}
 
+func (p *PrintServer) PrintAddPrinter(ctx context.Context, request *pd.PrintAddPrinterRequest) (*pd.PrintReply, error) {
+	api := bapi.NewAPI(ApiUrl)
+	body, err := api.PrintAddPrinter(ctx, request)
+	if err != nil {
+		return nil, err
+	}
+	printReply := pd.PrintReply{}
+	err = json.Unmarshal(body, &printReply)
+	if err != nil {
+		return nil, errcode.TogRPCError(errcode.Fail)
+	}
+	return &printReply, nil
+}
+
 func (p *PrintServer) PrintDeleteVoice(ctx context.Context, request *pd.PrintDeleteVoiceRequest) (*pd.PrintReply, error) {
 	api := bapi.NewAPI(ApiUrl)
 	body, err := api.PrintDeleteVoice(ctx, request)

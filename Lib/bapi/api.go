@@ -475,6 +475,28 @@ func (a *API)PrintGetPrintStatus(ctx context.Context, r *pd.PrintGetPrintStatusR
 	return body, nil
 }
 
+//自有应用 终端授权 (永久授权)
+func (a *API)PrintAddPrinter(ctx context.Context, r *pd.PrintAddPrinterRequest)([]byte, error){
+	data := make(url.Values)
+
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+	data["client_id"] = []string{setting.ClientSetting.ClientId}
+	data["access_token"] = []string{getToken(r.AccessToken)}
+	data["machine_code"] = []string{r.MachineCode}
+	data["sign"] = []string{common.GetSign(timestamp)}
+	data["id"] = []string{common.GetUUID4()}
+	data["timestamp"] = []string{timestamp}
+	data["msign"] = []string{r.Msign}
+	data["phone"] = []string{r.Phone}
+	data["print_name"] = []string{r.PrintName}
+
+	body, err := a.httpPost("printer/addprinter", data)
+	if err != nil {
+		return nil, err
+	}
+	return body, nil
+}
+
 func (a *API) httpGet(path string) ([]byte, error) {
 	resp, err := http.Get(fmt.Sprintf("%s/%s", a.URL, path))
 	if err != nil {

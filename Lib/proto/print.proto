@@ -27,6 +27,7 @@ service PrintService{
   rpc PrintGetOrderStatus(PrintGetOrderStatusRequest)returns(PrintReply);
   rpc PrintGetOrderPagingList(PrintGetOrderPagingListRequest)returns(PrintReply);
   rpc PrintGetPrintStatus(PrintGetPrintStatusRequest)returns(PrintReply);
+  rpc PrintAddPrinter(PrintAddPrinterRequest)returns(PrintReply);
 }
 
 message PrintRequest{
@@ -258,6 +259,18 @@ message PrintGetPrintStatusRequest{
   string sign = 4;
   string id = 5;
   int64 timestamp = 6;
+}
+
+message PrintAddPrinterRequest{
+  string client_id = 1;
+  string access_token = 2;
+  string msign = 4;
+  string machine_code = 3;
+  string sign = 7;
+  string id = 5;
+  int64 timestamp = 6;
+  string phone = 8;
+  string print_name = 9;
 }
 
 message ExpressPrintContent{
