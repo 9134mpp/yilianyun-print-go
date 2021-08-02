@@ -35,6 +35,8 @@ func NewAPI(url string) *API {
 	return &API{URL: url}
 }
 
+var AccessToken string = setting.ClientSetting.AccessToken
+
 // 自有应用获取token
 func (a *API) GetToken(ctx context.Context, r *pd.OauthRequest) ([]byte, error) {
 	data := make(url.Values)
@@ -58,7 +60,7 @@ func (a *API) Print(ctx context.Context, r *pd.PrintRequest) ([]byte, error) {
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["content"] = []string{r.Content}
@@ -93,13 +95,14 @@ func (a *API) GetForeignToken(ctx context.Context, r *pd.ForeignOauthRequest) ([
 	return body, nil
 
 }
+
 // 设置内置语音
 func(a *API) PrintSetVoice(ctx context.Context, r *pd.PrintSetVoiceRequest)([]byte, error){
 	data := make(url.Values)
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["content"] = []string{r.Content}
 	data["is_file"] = []string{r.IsFile}
@@ -121,7 +124,7 @@ func(a *API) ExpressPrint(ctx context.Context, r *pd.ExpressPrintRequest)([]byte
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["origin_id"] = []string{common.GetOrderId()}
 	data["id"] = []string{common.GetUUID4()}
@@ -145,7 +148,7 @@ func (a *API)PicturePrint(ctx context.Context, r *pd.PicturePrintRequest)([]byte
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["picture_url"] = []string{r.PictureUrl}
 	data["origin_id"] = []string{common.GetOrderId()}
@@ -166,7 +169,7 @@ func (a *API)PrintDeleteVoice(ctx context.Context, r *pd.PrintDeleteVoiceRequest
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["aid"] = []string{r.Aid}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -186,7 +189,7 @@ func (a *API)PrintDeletePrinter(ctx context.Context, r *pd.PrintDeletePrinterReq
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["id"] = []string{common.GetUUID4()}
@@ -205,7 +208,7 @@ func (a *API)PrintAddPrintMenu(ctx context.Context, r *pd.PrintAddPrintMenuReque
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["content"] = []string{r.Content}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -225,7 +228,7 @@ func (a *API)PrintShutDownRestart(ctx context.Context, r *pd.PrintShutDownRestar
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["response_type"] = []string{r.ResponseType}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -245,7 +248,7 @@ func (a *API)PrintSetSound(ctx context.Context, r *pd.PrintSetSoundRequest)([]by
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["response_type"] = []string{r.ResponseType}
 	data["voice"] = []string{r.Voice}
@@ -266,7 +269,7 @@ func (a *API)PrintInfo(ctx context.Context, r *pd.PrintInfoRequest)([]byte, erro
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["id"] = []string{common.GetUUID4()}
@@ -284,7 +287,7 @@ func (a *API)PrintCancelAll(ctx context.Context, r *pd.PrintCancelAllRequest)([]
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["id"] = []string{common.GetUUID4()}
@@ -303,7 +306,7 @@ func (a *API)PrintCaneLone(ctx context.Context, r *pd.PrintCaneLoneRequest)([]by
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["order_id"] = []string{r.OrderId}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -322,7 +325,7 @@ func (a *API)PrintSetIcon(ctx context.Context, r *pd.PrintSetIconRequest)([]byte
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["img_url"] = []string{r.ImgUrl}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -341,7 +344,7 @@ func (a *API)PrintDeleteIcon(ctx context.Context, r *pd.PrintDeleteIconRequest)(
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["id"] = []string{common.GetUUID4()}
@@ -360,7 +363,7 @@ func (a *API)PrintBtnPrint(ctx context.Context, r *pd.PrintBtnPrintRequest)([]by
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["response_type"] = []string{r.ResponseType}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -379,7 +382,7 @@ func (a *API)PrintGetOrder(ctx context.Context, r *pd.PrintGetOrderRequest)([]by
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["response_type"] = []string{r.ResponseType}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -399,7 +402,7 @@ func (a *API)PrintSetPushUrl(ctx context.Context, r *pd.PrintSetPushUrlRequest)(
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["cmd"] = []string{r.Cmd}
 	data["url"] = []string{r.Url}
@@ -420,7 +423,7 @@ func (a *API)PrintGetOrderStatus(ctx context.Context, r *pd.PrintGetOrderStatusR
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["order_id"] = []string{r.OrderId}
 	data["sign"] = []string{common.GetSign(timestamp)}
@@ -440,7 +443,7 @@ func (a *API)PrintGetOrderPagingList(ctx context.Context, r *pd.PrintGetOrderPag
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["page_index"] = []string{r.PageIndex}
 	data["page_size"] = []string{r.PageSize}
@@ -461,7 +464,7 @@ func (a *API)PrintGetPrintStatus(ctx context.Context, r *pd.PrintGetPrintStatusR
 
 	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
-	data["access_token"] = []string{r.AccessToken}
+	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["id"] = []string{common.GetUUID4()}
@@ -492,4 +495,12 @@ func (a *API) httpPost(path string, data url.Values) ([]byte, error) {
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
 	return body, nil
+}
+
+// 获取access_token
+func getToken(token string) string {
+	if token != ""{
+		return token
+	}
+	return setting.ClientSetting.AccessToken
 }
