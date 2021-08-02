@@ -54,4 +54,5 @@ func Setup(){
 func Update(section, key, value string){
 	Cfg.Section(section).Key(key).SetValue(value)
 	_ = Cfg.SaveTo("Config/app.ini")
+	Setup() //重新读取配置
 }
