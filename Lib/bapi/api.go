@@ -35,8 +35,6 @@ func NewAPI(url string) *API {
 	return &API{URL: url}
 }
 
-var AccessToken string = setting.ClientSetting.AccessToken
-
 // 自有应用获取token
 func (a *API) GetToken(ctx context.Context, r *pd.OauthRequest) ([]byte, error) {
 	data := make(url.Values)
