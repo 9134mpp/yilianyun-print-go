@@ -1,10 +1,8 @@
 package setting
 
 import (
-	"fmt"
 	"gopkg.in/ini.v1"
 	"log"
-	"os"
 )
 
 var (
@@ -35,7 +33,6 @@ type RpcServer struct {
 
 func Setup(){
 	var err error
-	fmt.Println(os.Args[0])
 	Cfg, err = ini.Load("Config/app.ini")
 	if err != nil {
 		log.Fatalf("Fail to parse 'app.ini':%v", err)
