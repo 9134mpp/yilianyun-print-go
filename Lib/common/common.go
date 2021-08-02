@@ -48,9 +48,9 @@ func mtRand(min, max int) int {
 	return rand.Intn(max - min) + min
 }
 
-//
+// 获取订单号
 func GetOrderId() string {
-	return fmt.Sprintf("E%04x", mtRand(0,0xffff))
+	return fmt.Sprintf("E%04d%04d%04d%04d%04d%04d", mtRand(0,0xffff), mtRand(0,0xffff), mtRand(0,0xffff), mtRand(0,0xffff),mtRand(0,0xffff),mtRand(0,0xffff))
 }
 
 
