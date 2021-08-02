@@ -278,7 +278,7 @@ func PrintGetPrintStatus(client pd.PrintServiceClient, p *pd.PrintGetPrintStatus
 }
 
 // 终端授权 (永久授权)
-func PrintAddPrinter(client pd.PrintServiceClient, p *pd.PrintGetPrintStatusRequest) error {
+func PrintAddPrinter(client pd.PrintServiceClient, p *pd.PrintAddPrinterRequest) error {
 	resp, _ := client.PrintAddPrinter(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
