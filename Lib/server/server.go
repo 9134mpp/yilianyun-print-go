@@ -19,6 +19,33 @@ func Setup(){
 	}
 }
 type PrintServer struct{}
+type ErrBody struct {
+	Error string `json:"error"`
+	Body string `json:"body"`
+	ErrorDescription string `json:"error_description"`
+}
+
+func getBody(b []byte) *pd.PrintReply {
+	errBody := ErrBody{}
+	_ = json.Unmarshal(b, &errBody)
+	p := pd.PrintReply{}
+	if errBody.Error != "0"{
+		p = pd.PrintReply{
+			Error: errBody.Error,
+			Body: &pd.PrintReply_ErrorBody{ErrorBody: errBody.Body},
+			ErrorDescription: errBody.ErrorDescription,
+		}
+		return &p
+	}
+	body := pd.Body{}
+	_ = json.Unmarshal(b ,&body)
+	p = pd.PrintReply{
+		Error: errBody.Error,
+		Body: &pd.PrintReply_SuccessBody{SuccessBody: &body},
+		ErrorDescription: errBody.ErrorDescription,
+	}
+	return &p
+}
 
 func (p *PrintServer) PrintAddPrinter(ctx context.Context, request *pd.PrintAddPrinterRequest) (*pd.PrintReply, error) {
 	api := bapi.NewAPI(ApiUrl)
@@ -292,12 +319,8 @@ func (p *PrintServer) PrintSetVoice(ctx context.Context, request *pd.PrintSetVoi
 	if err != nil {
 		return nil, err
 	}
-	printReply := pd.PrintReply{}
-	err = json.Unmarshal(body, &printReply)
-	if err != nil {
-		return nil, errcode.TogRPCError(errcode.Fail)
-	}
-	return &printReply, nil
+	printReply := getBody(body)
+	return printReply, nil
 }
 
 func (p *PrintServer) GetForeignToken(ctx context.Context, request *pd.ForeignOauthRequest) (*pd.PrintReply, error) {

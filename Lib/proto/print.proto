@@ -44,7 +44,10 @@ message PrintRequest{
 message PrintReply{
   string error = 1;
   string error_description = 2;
-  Body body = 3;
+  oneof body {
+    Body success_body = 3;
+    string error_body = 4;
+  }
 }
 
 
