@@ -96,7 +96,7 @@ message PrintSetVoiceRequest{
   string machine_code = 3;
   string content = 4;
   string is_file = 5;
-  string aid = 6;
+  int64 aid = 6;
   string sign = 7;
   string id = 8;
   int64 timestamp = 9;
@@ -106,7 +106,7 @@ message PrintDeleteVoiceRequest{
   string client_id = 1;
   string access_token = 2;
   string machine_code = 3;
-  string aid = 4;
+  int64 aid = 4;
   string sign = 5;
   string id = 6;
   int64 timestamp = 7;
