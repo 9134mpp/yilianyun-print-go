@@ -104,7 +104,7 @@ func(a *API) PrintSetVoice(ctx context.Context, r *pd.PrintSetVoiceRequest)([]by
 	data["machine_code"] = []string{r.MachineCode}
 	data["content"] = []string{r.Content}
 	data["is_file"] = []string{r.IsFile}
-	data["aid"] = []string{r.Aid}
+	data["aid"] = []string{strconv.FormatInt(r.Aid, 10)}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["id"] = []string{common.GetUUID4()}
 	data["timestamp"] = []string{timestamp}
@@ -169,7 +169,7 @@ func (a *API)PrintDeleteVoice(ctx context.Context, r *pd.PrintDeleteVoiceRequest
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
 	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
-	data["aid"] = []string{r.Aid}
+	data["aid"] = []string{strconv.FormatInt(r.Aid, 10)}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["id"] = []string{common.GetUUID4()}
 	data["timestamp"] = []string{timestamp}
