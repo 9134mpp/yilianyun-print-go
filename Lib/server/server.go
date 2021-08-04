@@ -25,9 +25,12 @@ type ErrBody struct {
 	ErrorDescription string `json:"error_description"`
 }
 
-func getBody(b []byte) *pd.PrintReply {
+func getBody(b []byte) (*pd.PrintReply, error) {
 	errBody := ErrBody{}
-	_ = json.Unmarshal(b, &errBody)
+	err := json.Unmarshal(b, &errBody)
+	if err != nil{
+		return nil, err
+	}
 	p := pd.PrintReply{}
 	if errBody.Error != "0"{
 		p = pd.PrintReply{
@@ -35,7 +38,7 @@ func getBody(b []byte) *pd.PrintReply {
 			Body: &pd.PrintReply_ErrorBody{ErrorBody: errBody.Body},
 			ErrorDescription: errBody.ErrorDescription,
 		}
-		return &p
+		return &p, nil
 	}
 	body := pd.Body{}
 	_ = json.Unmarshal(b ,&body)
@@ -44,7 +47,7 @@ func getBody(b []byte) *pd.PrintReply {
 		Body: &pd.PrintReply_SuccessBody{SuccessBody: &body},
 		ErrorDescription: errBody.ErrorDescription,
 	}
-	return &p
+	return &p, nil
 }
 
 func (p *PrintServer) PrintAddPrinter(ctx context.Context, request *pd.PrintAddPrinterRequest) (*pd.PrintReply, error) {
@@ -319,7 +322,10 @@ func (p *PrintServer) PrintSetVoice(ctx context.Context, request *pd.PrintSetVoi
 	if err != nil {
 		return nil, err
 	}
-	printReply := getBody(body)
+	printReply, err := getBody(body)
+	if err != nil {
+		return nil, err
+	}
 	return printReply, nil
 }
 
@@ -353,17 +359,16 @@ func (p *PrintServer) GetToken(ctx context.Context, r *pd.OauthRequest) (*pd.Pri
 	if err != nil {
 		return nil, err
 	}
-	printReply := pd.PrintReply{}
-	err = json.Unmarshal(body, &printReply)
+	printReply, err := getBody(body)
 	if err != nil {
 		return nil, errcode.TogRPCError(errcode.Fail)
 	}
 	success := "0"
 	if printReply.Error != success{
-		return &printReply, nil
+		return printReply, nil
 	}
-	setting.Update("Client", "AccessToken", printReply.Body.AccessToken) //修改配置文件中的access_token
-	return &printReply, nil
+	setting.Update("Client", "AccessToken", printReply.GetSuccessBody().AccessToken) //修改配置文件中的access_token
+	return printReply, nil
 }
 
 func (p *PrintServer) Print(ctx context.Context, r *pd.PrintRequest) (*pd.PrintReply, error) {
