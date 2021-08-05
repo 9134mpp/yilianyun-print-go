@@ -78,7 +78,7 @@ func PrintSetVoice(client pd.PrintServiceClient, p *pd.PrintSetVoiceRequest) err
 	resp, _ := client.PrintSetVoice(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintSetVoice resp: %+v", resp.GetErrorDescription())
+		log.Printf("client.PrintSetVoice resp: %+v", resp.GetErrorBody())
 		return nil
 	}
 	log.Printf("client.PrintSetVoice resp: %+v", resp)
