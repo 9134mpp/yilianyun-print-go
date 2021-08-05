@@ -20,6 +20,8 @@ message Body{
   string print_time = 9;
   string status = 10;
   string content = 11;
+  string version = 12;
+  string print_width = 13;
 }
 
 message Error {
