@@ -19,20 +19,33 @@ func Setup(){
 	}
 }
 type PrintServer struct{}
+
+type IsBody struct {
+	Error string `json:"error"`
+}
+
 type ErrBody struct {
 	Error string `json:"error"`
 	Body string `json:"body"`
 	ErrorDescription string `json:"error_description"`
 }
 
+type SuccessBody struct {
+	Error string `json:"error"`
+	Body pd.Body `json:"body"`
+	ErrorDescription string `json:"error_description"`
+}
+// 获取Body数据
 func getBody(b []byte) (*pd.PrintReply, error) {
-	errBody := ErrBody{}
-	err := json.Unmarshal(b, &errBody)
+	isBody := IsBody{}
+	err := json.Unmarshal(b, &isBody)
 	if err != nil{
 		return nil, err
 	}
 	p := pd.PrintReply{}
-	if errBody.Error != "0"{
+	if isBody.Error != "0"{
+		errBody := ErrBody{}
+		_ = json.Unmarshal(b, &errBody)
 		p = pd.PrintReply{
 			Error: errBody.Error,
 			Body: &pd.PrintReply_ErrorBody{ErrorBody: errBody.Body},
@@ -40,12 +53,12 @@ func getBody(b []byte) (*pd.PrintReply, error) {
 		}
 		return &p, nil
 	}
-	body := pd.Body{}
-	_ = json.Unmarshal(b ,&body)
+	successBody := SuccessBody{}
+	_ = json.Unmarshal(b, &successBody)
 	p = pd.PrintReply{
-		Error: errBody.Error,
-		Body: &pd.PrintReply_SuccessBody{SuccessBody: &body},
-		ErrorDescription: errBody.ErrorDescription,
+		Error: isBody.Error,
+		Body: &pd.PrintReply_SuccessBody{SuccessBody: &successBody.Body},
+		ErrorDescription: successBody.ErrorDescription,
 	}
 	return &p, nil
 }
