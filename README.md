@@ -173,7 +173,7 @@ func foreign() {
 }
 ```
 # 参考接口
-```
+```go
 // 文本打印
 func Print(client pd.PrintServiceClient, p *pd.PrintRequest) error
 // 获取token
