@@ -172,7 +172,7 @@ func foreign() {
 	_ = Api.Print(Client, p)
 }
 ```
-#参考接口
+# 参考接口
 ```
 // 文本打印
 func Print(client pd.PrintServiceClient, p *pd.PrintRequest) error
