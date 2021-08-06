@@ -258,7 +258,7 @@ func PrintGetOrderPagingList(client pd.PrintServiceClient, p *pd.PrintGetOrderPa
 	resp, _ := client.PrintGetOrderPagingList(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintGetOrderPagingList resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintGetOrderPagingList resp:error_description:%+v %+v",resp.GetErrorDescription(), resp.GetBody())
 		return nil
 	}
 	log.Printf("client.PrintGetOrderPagingList resp: %+v", resp)

@@ -35,15 +35,23 @@ type SuccessBody struct {
 	Body pd.Body `json:"body"`
 	ErrorDescription string `json:"error_description"`
 }
+
+type ListBody struct{
+	ListBody  []*pd.Body `json:"body"`
+}
 // 获取Body数据
 func getBody(b []byte) (*pd.PrintReply, error) {
 	isBody := IsBody{}
 	err := json.Unmarshal(b, &isBody)
+	// 订单列表接口数据解析
+	listBody := ListBody{}
+	_ = json.Unmarshal(b, &listBody)
 	if err != nil{
 		return nil, err
 	}
 	p := pd.PrintReply{}
-	if isBody.Error != "0"{
+	success := "0"
+	if isBody.Error != success{
 		errBody := ErrBody{}
 		_ = json.Unmarshal(b, &errBody)
 		p = pd.PrintReply{
@@ -59,6 +67,7 @@ func getBody(b []byte) (*pd.PrintReply, error) {
 		Error: isBody.Error,
 		Body: &pd.PrintReply_SuccessBody{SuccessBody: &successBody.Body},
 		ErrorDescription: successBody.ErrorDescription,
+		ListBody: listBody.ListBody,
 	}
 	return &p, nil
 }

@@ -48,6 +48,7 @@ message PrintReply{
     Body success_body = 3;
     string error_body = 4;
   }
+  repeated Body list_body = 5;
 }
 
 
