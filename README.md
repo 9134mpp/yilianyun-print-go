@@ -172,3 +172,53 @@ func foreign() {
 	_ = Api.Print(Client, p)
 }
 ```
+#参考接口
+```
+// 文本打印
+func Print(client pd.PrintServiceClient, p *pd.PrintRequest) error
+// 获取token
+func GetToken(client pd.PrintServiceClient, p *pd.OauthRequest) (string, error)
+// 开放应用获取token
+func GetForeignToken(client pd.PrintServiceClient, p *pd.ForeignOauthRequest)(string, error)
+// 图形打印
+func PicturePrint(client pd.PrintServiceClient, p *pd.PicturePrintRequest) error
+// 面单接口
+func ExpressPrint(client pd.PrintServiceClient, p *pd.ExpressPrintRequest) error
+// 设置内置语音接口
+func PrintSetVoice(client pd.PrintServiceClient, p *pd.PrintSetVoiceRequest) error
+// 删除内置语音接口
+func PrintDeleteVoice(client pd.PrintServiceClient, p *pd.PrintDeleteVoiceRequest) error
+// 删除终端授权
+func PrintDeletePrinter(client pd.PrintServiceClient, p *pd.PrintDeletePrinterRequest) error
+// 添加应用菜单
+func PrintAddPrintMenu(client pd.PrintServiceClient, p *pd.PrintAddPrintMenuRequest) error
+// 关机重启接口
+func PrintShutDownRestart(client pd.PrintServiceClient, p *pd.PrintShutDownRestartRequest) error
+// 声音调节接口
+func PrintSetSound(client pd.PrintServiceClient, p *pd.PrintSetSoundRequest) error
+// 获取机型打印宽度接口
+func PrintInfo(client pd.PrintServiceClient, p *pd.PrintInfoRequest) error
+// 取消所有未打印订单
+func PrintCancelAll(client pd.PrintServiceClient, p *pd.PrintCancelAllRequest) error
+// 取消单条未打印订单
+func PrintCaneLone(client pd.PrintServiceClient, p *pd.PrintCaneLoneRequest) error
+// 设置logo接口
+func PrintSetIcon(client pd.PrintServiceClient, p *pd.PrintSetIconRequest) error 
+// 取消logo接口
+func PrintDeleteIcon(client pd.PrintServiceClient, p *pd.PrintDeleteIconRequest) error
+// 打印方式接口
+func PrintBtnPrint(client pd.PrintServiceClient, p *pd.PrintBtnPrintRequest) error
+// 接单拒单设置接口
+func PrintGetOrder(client pd.PrintServiceClient, p *pd.PrintGetOrderRequest) error
+// 设置推送url接口
+func PrintSetPushUrl(client pd.PrintServiceClient, p *pd.PrintSetPushUrlRequest) error
+// 获取订单状态接口
+func PrintGetOrderStatus(client pd.PrintServiceClient, p *pd.PrintGetOrderStatusRequest) error
+// 获取订单列表接口
+func PrintGetOrderPagingList(client pd.PrintServiceClient, p *pd.PrintGetOrderPagingListRequest) error
+//	获取终端状态接口
+func PrintGetPrintStatus(client pd.PrintServiceClient, p *pd.PrintGetPrintStatusRequest) error
+// 终端授权 (永久授权)
+func PrintAddPrinter(client pd.PrintServiceClient, p *pd.PrintAddPrinterRequest) error
+```
+具体细节参考 Demo/client/Lib/Api/printClient.go文件
