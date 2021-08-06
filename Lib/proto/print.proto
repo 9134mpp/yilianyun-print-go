@@ -51,7 +51,6 @@ message PrintReply{
   repeated Body list_body = 5;
 }
 
-
 message OauthRequest{
   string client_id = 1;
   string grant_type = 2;
@@ -59,6 +58,7 @@ message OauthRequest{
   string scope = 4;
   int64 timestamp = 5;
   string id = 6;
+  string refresh_token = 7;
 }
 
 message ForeignOauthRequest{

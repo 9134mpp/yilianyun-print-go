@@ -24,10 +24,8 @@ func main() {
 	clientConn, _ := Api.GetClientConn(ctx, fmt.Sprintf("%s:%s", setting.RpcServerSetting.Url, setting.RpcServerSetting.Port), nil)
 	defer clientConn.Close()
 	Client = pd.NewPrintServiceClient(clientConn)
-	// 自有应用示例子
-	have()
-	// 开放应用示例
-	//foreign()
+	// 自有应用示例子调用have方法 开放应用示例调用foreign
+
 }
 
 // 自有应用授权打印demo
@@ -35,6 +33,11 @@ func have() {
 	//授权
 	token, _ := Api.GetToken(Client, &pd.OauthRequest{}) // 自有应用access_token有效期时间永久获取后记得保存，不要频繁获取！！！ 不要频繁获取！！！ 不要频繁获取！！！
 	fmt.Printf("token:%s\n", token)
+	//添加终端
+	_ = Api.PrintAddPrinter(Client, &pd.PrintAddPrinterRequest{
+		Msign: "",
+		MachineCode: "",
+	})
 	//打印
 	p := &pd.PrintRequest{
 		AccessToken: token,
