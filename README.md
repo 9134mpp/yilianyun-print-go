@@ -15,20 +15,30 @@ git clone https://github.com/9134mpp/yilianyun-print-go.git
 ```shell
 git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
 ```
+##目录介绍
+```
+├─ yilianyun-print-go
+│  ├─ Config            ---配置目录
+│  ├─├─ app.example.ini  ---配置文件模板
+│  ├─ Demo   ---示例调用demo目录
+│  ├─├─ client   ---client端调用示例目录
+│  ├─├─├─ Lib    ---client的内部封装目录
+│  ├─├─├─├─Api   --- Api所有调用接口示例目录
+│  ├─├─├─├─├─ printClient.go ---client Api封装文件
+│  ├─├─├─ main.go  ---client调用示例
+│  ├─ Lib  ---server端的核心文件
+│  ├─├─ bapi ---server Api调用目录
+│  ├─├─ common ---公共方法目录如生成sign order_id方法
+│  ├─├─ errcode ---server端内部错误目录
+│  ├─├─ proto ---编译和生成 proto 文件目录
+│  ├─├─ server ---server端接口封装目录
+│  ├─├─ setting ---读取配置文件目录
+│  ├─ vendor 
+│  ├─ main.go ---server端启动文件
 
- # 目录介绍
-  1. server端的接口类Lib/bapi/api.go，集成了所有的易联云接口
-  2. server端的配置类Config/app.ini
-  3. 公共方法Lib/common/common.go 有获取uuid,order_id, sign 等方法
-  4. server端配置读取类Lib/setting/setting.go 读取相关配置如client_id, client_server等配置
-  5. server端的错误返回目录Lib/errcode 返回grpc 错误的目录
-  6. 目录Lib/Proto 定义Protobuf数据结构的目录
-  7. 目录Lib/server grpc Server服务的目录 
-  8. Demo/Client client端调用测试demo
-  9. Demo/Client/Lib/Api/printClient.go 有所有client端的接口示例
-  10. 若有什么问题，欢迎来提个issues， 谢谢大家！
-
- 
+    
+若有什么问题，欢迎来提个issues， 谢谢大家！
+```
  # 使用
  首先运行 根目录下的main.go
    ```shell script
@@ -49,6 +59,16 @@ go run main.go -help
 ````
 grpc server端服务 在参考 Demo/Client/main.go代码
 
+## 使用说明
+```
+client_id、origin_id、sign、id、timestamp参数不用在传递，server端这边会自动生成
+自由应用可以不用传assess_token。
+开放应用需要传assess_token。
+
+配置文件如果默认填写了access_token默认即自有应用。
+对接文档 http://doc2.10ss.net/331992
+如果文档失效查看 https://doc3.10ss.net/
+```
 
 # 示范代码 
 ```go 
