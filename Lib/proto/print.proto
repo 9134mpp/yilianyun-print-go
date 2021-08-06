@@ -248,8 +248,8 @@ message PrintGetOrderPagingListRequest{
   string client_id = 1;
   string access_token = 2;
   string machine_code = 3;
-  string page_index = 4;
-  string page_size = 5;
+  int64 page_index = 4;
+  int64 page_size = 5;
   string sign = 6;
   string id = 7;
   int64 timestamp = 8;
