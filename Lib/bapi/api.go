@@ -443,8 +443,8 @@ func (a *API)PrintGetOrderPagingList(ctx context.Context, r *pd.PrintGetOrderPag
 	data["client_id"] = []string{setting.ClientSetting.ClientId}
 	data["access_token"] = []string{getToken(r.AccessToken)}
 	data["machine_code"] = []string{r.MachineCode}
-	data["page_index"] = []string{r.PageIndex}
-	data["page_size"] = []string{r.PageSize}
+	data["page_index"] = []string{strconv.FormatInt(r.PageIndex, 10)}
+	data["page_size"] = []string{strconv.FormatInt(r.PageSize, 10)}
 	data["sign"] = []string{common.GetSign(timestamp)}
 	data["id"] = []string{common.GetUUID4()}
 	data["timestamp"] = []string{timestamp}
