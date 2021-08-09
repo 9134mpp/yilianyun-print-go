@@ -40,7 +40,11 @@ git clone https://github.com.cnpmjs.org/9134mpp/yilianyun-print-go
 若有什么问题，欢迎来提个issues， 谢谢大家！
 ```
  # 使用
- 首先运行 根目录下的main.go
+ 先运行
+ ```shell script
+ go mod vendor
+ ```
+ 根目录下运行 main.go
    ```shell script
   go run main.go grpc_port=9523
   ```
