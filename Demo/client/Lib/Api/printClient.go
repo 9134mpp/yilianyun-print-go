@@ -290,21 +290,6 @@ func PrintAddPrinter(client pd.PrintServiceClient, p *pd.PrintAddPrinterRequest)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 获取连接
 func GetClientConn(ctx context.Context, target string, opts []grpc.DialOption) (*grpc.ClientConn, error) {
 	opts = append(opts, grpc.WithInsecure())
