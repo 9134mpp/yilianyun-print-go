@@ -222,3 +222,7 @@ func PrintGetPrintStatus(client pd.PrintServiceClient, p *pd.PrintGetPrintStatus
 func PrintAddPrinter(client pd.PrintServiceClient, p *pd.PrintAddPrinterRequest) error
 ```
 具体细节参考 Demo/client/Lib/Api/printClient.go文件
+
+说明一下 获取订单列表接口
+由于数据结构原因目前我把数据返回的list放在了
+`ListBody`里面 所以要获取接口返回的`body`,使用 `GetListBody()`。
