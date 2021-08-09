@@ -7,7 +7,6 @@ import (
 	"strings"
 	"yilianyun-print-go/Demo/client/Lib/Api"
 	pd "yilianyun-print-go/Lib/proto"
-	"yilianyun-print-go/Lib/setting"
 )
 
 var Client pd.PrintServiceClient
@@ -21,7 +20,7 @@ func init() {
 }
 func main() {
 	ctx := context.Background()
-	clientConn, _ := Api.GetClientConn(ctx, fmt.Sprintf("%s:%s", setting.RpcServerSetting.Url, setting.RpcServerSetting.Port), nil)
+	clientConn, _ := Api.GetClientConn(ctx, fmt.Sprintf("%s:%s", url, port), nil)
 	defer clientConn.Close()
 	Client = pd.NewPrintServiceClient(clientConn)
 	// 自有应用示例子调用have方法 开放应用示例调用foreign
