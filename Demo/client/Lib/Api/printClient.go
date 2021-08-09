@@ -18,7 +18,7 @@ func Print(client pd.PrintServiceClient, p *pd.PrintRequest) error {
 	resp, _ := client.Print(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.Print resp: %+v", resp.ErrorDescription)
+		log.Printf("client.Print err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.Print resp: %+v", resp)
@@ -30,7 +30,7 @@ func GetToken(client pd.PrintServiceClient, p *pd.OauthRequest) (string, error) 
 	resp, _ := client.GetToken(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.GetToken resp: %+v", resp.ErrorDescription)
+		log.Printf("client.GetToken err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return "", nil
 	}
 	log.Printf("client.GetToken resp: %+v", resp)
@@ -42,7 +42,7 @@ func GetForeignToken(client pd.PrintServiceClient, p *pd.ForeignOauthRequest)(st
 	resp, _ := client.GetForeignToken(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.GetForeignToken resp: %+v", resp.ErrorDescription)
+		log.Printf("client.GetForeignToken err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return "", nil
 	}
 	log.Printf("client.GetForeignToken resp: %+v", resp)
@@ -54,7 +54,7 @@ func PicturePrint(client pd.PrintServiceClient, p *pd.PicturePrintRequest) error
 	resp, _ := client.PicturePrint(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PicturePrint resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PicturePrint err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PicturePrint resp: %+v", resp)
@@ -66,7 +66,7 @@ func ExpressPrint(client pd.PrintServiceClient, p *pd.ExpressPrintRequest) error
 	resp, _ := client.ExpressPrint(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.ExpressPrint resp: %+v", resp.ErrorDescription)
+		log.Printf("client.ExpressPrint err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.ExpressPrint resp: %+v", resp)
@@ -78,7 +78,7 @@ func PrintSetVoice(client pd.PrintServiceClient, p *pd.PrintSetVoiceRequest) err
 	resp, _ := client.PrintSetVoice(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintSetVoice resp: %+v", resp.GetErrorBody())
+		log.Printf("client.PrintSetVoice err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintSetVoice resp: %+v", resp)
@@ -90,7 +90,7 @@ func PrintDeleteVoice(client pd.PrintServiceClient, p *pd.PrintDeleteVoiceReques
 	resp, _ := client.PrintDeleteVoice(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintDeleteVoice resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintDeleteVoice err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintDeleteVoice resp: %+v", resp)
@@ -102,7 +102,7 @@ func PrintDeletePrinter(client pd.PrintServiceClient, p *pd.PrintDeletePrinterRe
 	resp, _ := client.PrintDeletePrinter(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintDeletePrinter resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintDeletePrinter err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintDeletePrinter resp: %+v", resp)
@@ -114,7 +114,7 @@ func PrintAddPrintMenu(client pd.PrintServiceClient, p *pd.PrintAddPrintMenuRequ
 	resp, _ := client.PrintAddPrintMenu(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintAddPrintMenu resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintAddPrintMenu err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintAddPrintMenu resp: %+v", resp)
@@ -126,7 +126,7 @@ func PrintShutDownRestart(client pd.PrintServiceClient, p *pd.PrintShutDownResta
 	resp, _ := client.PrintShutDownRestart(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintShutDownRestart resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintShutDownRestart err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintShutDownRestart resp: %+v", resp)
@@ -137,7 +137,7 @@ func PrintSetSound(client pd.PrintServiceClient, p *pd.PrintSetSoundRequest) err
 	resp, _ := client.PrintSetSound(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintSetSound resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintSetSound err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintSetSound resp: %+v", resp)
@@ -149,7 +149,7 @@ func PrintInfo(client pd.PrintServiceClient, p *pd.PrintInfoRequest) error {
 	resp, _ := client.PrintInfo(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintInfo resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintInfo err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintInfo resp: %+v", resp)
@@ -161,7 +161,7 @@ func PrintCancelAll(client pd.PrintServiceClient, p *pd.PrintCancelAllRequest) e
 	resp, _ := client.PrintCancelAll(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintCancelAll resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintCancelAll err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintCancelAll resp: %+v", resp)
@@ -173,7 +173,7 @@ func PrintCaneLone(client pd.PrintServiceClient, p *pd.PrintCaneLoneRequest) err
 	resp, _ := client.PrintCaneLone(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintCaneLone resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintCaneLone err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintCaneLone resp: %+v", resp)
@@ -185,7 +185,7 @@ func PrintSetIcon(client pd.PrintServiceClient, p *pd.PrintSetIconRequest) error
 	resp, _ := client.PrintSetIcon(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintSetIcon resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintSetIcon err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintSetIcon resp: %+v", resp)
@@ -197,7 +197,7 @@ func PrintDeleteIcon(client pd.PrintServiceClient, p *pd.PrintDeleteIconRequest)
 	resp, _ := client.PrintDeleteIcon(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintDeleteIcon resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintDeleteIcon err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintDeleteIcon resp: %+v", resp)
@@ -210,7 +210,7 @@ func PrintBtnPrint(client pd.PrintServiceClient, p *pd.PrintBtnPrintRequest) err
 	resp, _ := client.PrintBtnPrint(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintBtnPrint resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintBtnPrint err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintBtnPrint resp: %+v", resp)
@@ -222,7 +222,7 @@ func PrintGetOrder(client pd.PrintServiceClient, p *pd.PrintGetOrderRequest) err
 	resp, _ := client.PrintGetOrder(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintGetOrder resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintGetOrder err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintGetOrder resp: %+v", resp)
@@ -234,7 +234,7 @@ func PrintSetPushUrl(client pd.PrintServiceClient, p *pd.PrintSetPushUrlRequest)
 	resp, _ := client.PrintSetPushUrl(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintSetPushUrl resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintSetPushUrl err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintSetPushUrl resp: %+v", resp)
@@ -246,7 +246,7 @@ func PrintGetOrderStatus(client pd.PrintServiceClient, p *pd.PrintGetOrderStatus
 	resp, _ := client.PrintGetOrderStatus(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintGetOrderStatus resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintGetOrderStatus err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintGetOrderStatus resp: %+v", resp)
@@ -270,7 +270,7 @@ func PrintGetPrintStatus(client pd.PrintServiceClient, p *pd.PrintGetPrintStatus
 	resp, _ := client.PrintGetPrintStatus(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintGetPrintStatus resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintGetPrintStatus err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintGetPrintStatus resp: %+v", resp)
@@ -282,7 +282,7 @@ func PrintAddPrinter(client pd.PrintServiceClient, p *pd.PrintAddPrinterRequest)
 	resp, _ := client.PrintAddPrinter(context.Background(), p)
 	success := "0"
 	if resp.GetError() != success {
-		log.Printf("client.PrintAddPrinter resp: %+v", resp.ErrorDescription)
+		log.Printf("client.PrintAddPrinter err error_description resp:%+v body resp: %+v", resp.GetErrorBody(), resp.ErrorDescription)
 		return nil
 	}
 	log.Printf("client.PrintAddPrinter resp: %+v", resp)
